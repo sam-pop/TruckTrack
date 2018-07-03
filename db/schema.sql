@@ -1,3 +1,3 @@
-CREATE DATABASE truckTrack_db;
+CREATE DATABASE trucktrack_db;
 
-USE truckTrack_db;
+USE trucktrack_db;
