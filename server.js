@@ -8,7 +8,6 @@ const passport = require("./config/passport");
 const PORT = process.env.PORT || 8080;
 const db = require('./models');
 const app = express(); // express app init
-const routes = require('./routes'); // our app routes
 
 // sets up the express app to handle data parsing
 app.use(bodyParser.urlencoded({
@@ -38,7 +37,8 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // router
-app.use(routes);
+require('./routes/html_routes')(app);
+require('./routes/api_routes')(app);
 
 // sequelize db sync + app listen
 db.sequelize.sync({
