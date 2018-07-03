@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(session({
-    secret: "keyboard cat",
+    secret: "this is how do we it",
     resave: true,
     saveUninitialized: true
 }));
