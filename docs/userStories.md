@@ -1,4 +1,4 @@
-# TruckTrack 
+# TruckTrack
 
 Truck-Track helps connects between food truck owners/operators and their customers.
 
