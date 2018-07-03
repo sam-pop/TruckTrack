@@ -1,4 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
+    // creates our SocialHandles table
     var SocialHandles = sequelize.define("SocialHandles", {
         twitter: {
             type: DataTypes.STRING,
@@ -18,6 +19,7 @@ module.exports = function (sequelize, DataTypes) {
         },
     });
 
+    // associates SocialHandles with Truck (foreign key) 
     SocialHandles.associate = function (models) {
         SocialHandles.belongsTo(models.Truck, {
             foreignKey: {

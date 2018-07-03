@@ -1,4 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
+    // create our Location table
     var Location = sequelize.define("Location", {
         lat: {
             type: DataTypes.FLOAT,
@@ -26,6 +27,7 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    // associates Location with Truck (foreign key) 
     Location.associate = function (models) {
         Location.belongsTo(models.Truck, {
             foreignKey: {

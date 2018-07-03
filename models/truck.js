@@ -1,4 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
+    // create our Truck table
     var Truck = sequelize.define("Truck", {
         name: {
             type: DataTypes.STRING,
@@ -34,6 +35,7 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    // associates Truck with User (foreign key) 
     Truck.associate = function (models) {
         Truck.belongsTo(models.User, {
             foreignKey: {
