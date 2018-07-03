@@ -1,37 +1,47 @@
+// Dependencies
 const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const passport = require("./config/passport");
 
+// Variables
 const PORT = process.env.PORT || 8080;
 const db = require('./models');
+const app = express(); // express app init
 
-const app = express();
-
-// Sets up the Express app to handle data parsing
+// sets up the express app to handle data parsing
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+
+// static serve the public folder to our express app
 app.use(express.static("public"));
+
+// init and config our express session
 app.use(session({
     secret: "big balagan",
     resave: true,
     saveUninitialized: true
 }));
+
+// passport init
 app.use(passport.initialize());
 app.use(passport.session());
-const exphbs = require("express-handlebars");
 
+// handlebars view engine init
+const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({
     defaultLayout: "main"
 }));
 app.set("view engine", "handlebars");
 
+//TODO: move into router
 app.get('/', (req, res) => {
     res.send('Welcome to TRUCKTRACK');
 });
 
+// sequelize db sync + app listen
 db.sequelize.sync({
     force: true
 }).then(function () {
