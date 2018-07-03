@@ -15,6 +15,14 @@ module.exports = function (sequelize, DataTypes) {
                 isFloat: true,
                 len: [1]
             }
+        },
+        updateTime: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            validate: {
+                isDate: true,
+                len: [1]
+            }
         }
     });
 
