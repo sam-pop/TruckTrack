@@ -1,26 +1,23 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const session = require("express-session");
+const passport = require("./config/passport");
+
+const PORT = process.env.PORT || 8080;
+const db = require('./models');
 
 const app = express();
 
-
-const PORT = process.env.PORT || 8080;
-
-// Use the express.static middleware to serve static content for the app from
-// the "public" directory in the application directory.
-app.use(express.static("public"));
-
 // Sets up the Express app to handle data parsing
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-
+app.use(express.static("public"));
+app.use(session({secret: "keyboard cat", resave: true, saveUninitialized: true}));
+app.use(passport.initialize());
+app.use(passport.session());
 const exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({
-    defaultLayout: "main"
-}));
+app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 app.get('/', (req, res) => {
