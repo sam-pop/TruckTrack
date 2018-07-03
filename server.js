@@ -8,7 +8,7 @@ const passport = require("./config/passport");
 const PORT = process.env.PORT || 8080;
 const db = require('./models');
 const app = express(); // express app init
-const routes = require('./controllers/user_controller'); // controller routes
+const routes = require('./routes'); // controller routes
 
 // sets up the express app to handle data parsing
 app.use(bodyParser.urlencoded({
@@ -37,10 +37,8 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-// TODO: delete and move to router
-app.get('/', (req, res) => {
-    res.send('Welcome to TRUCKTRACK');
-});
+// router
+app.use(routes);
 
 // sequelize db sync + app listen
 db.sequelize.sync({
