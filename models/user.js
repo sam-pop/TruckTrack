@@ -1,4 +1,5 @@
 var bcrypt = require("bcrypt-nodejs");
+var validator = require('validator');
 
 module.exports = function (sequelize, DataTypes) {
     // creates our User table
@@ -6,10 +7,9 @@ module.exports = function (sequelize, DataTypes) {
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
-            }
+            unique: true
+            // we use a hook to handle the email validation (using validator package)
+            // instead of the built-in isEmail validation method (gmail addresses false negative)
         },
         password: {
             type: DataTypes.STRING,
@@ -23,6 +23,20 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
             allowNull: false
+        }
+    });
+
+    // isEmail validation for the user email column 
+    User.hook('beforeValidate', function (user) {
+        // workaround for false error response for gmail addresses
+        if (user.email.indexOf('@gmail.com') != -1) {
+            return sequelize.Promise.resolve(user);
+        }
+        // isEmail validation
+        if (validator.isEmail(user.email)) {
+            return sequelize.Promise.resolve(user);
+        } else {
+            return sequelize.Promise.reject('Validation Error: invalid email');
         }
     });
 
