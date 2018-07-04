@@ -5,14 +5,31 @@ const User = require('../models/user');
 let db = require('../models');
 
 module.exports = function (app) {
-    app.get('/test', function (req, res) {
+
+    // GET signup page
+    app.get('/signup', function (req, res) {
+        res.render("signup");
+    });
+
+    // POST signup page
+    // app.post('/signup', function (req, res) {
+    //     let user = {
+    //         email: "tesg@gmail.com",
+    //         password: 'passtest',
+    //         name: 'Test McTesty'
+    //     };
+    //     addUser(user);
+    //     res.end('test');
+    // });
+
+    app.post('/signup', function (req, res) {
         let user = {
-            email: "tesg@gmail.com",
-            password: 'passtest',
-            name: 'Test McTesty'
+            email: req.body.email,
+            password: req.body.password,
+            name: req.body.name,
         };
         addUser(user);
-        res.send('test');
+        // res.send('test');
 
     });
 };
