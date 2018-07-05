@@ -37,8 +37,8 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // router
+require('./routes/html_routes')(app);
 require('./controllers/user_controller')(app);
-require('./routes/api_routes')(app);
 
 // sequelize db sync + app listen
 db.sequelize.sync({
