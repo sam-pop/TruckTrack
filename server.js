@@ -1,13 +1,13 @@
 // Dependencies
-const express = require("express");
-const bodyParser = require("body-parser");
-const session = require("express-session");
-const passport = require("./config/passport");
+var express = require("express");
+var bodyParser = require("body-parser");
+var session = require("express-session");
+var passport = require("./config/passport");
 
 // Variables
-const PORT = process.env.PORT || 8080;
-const db = require('./models');
-const app = express(); // express app init
+var PORT = process.env.PORT || 8080;
+var db = require('./models');
+var app = express(); // express app init
 
 // sets up the express app to handle data parsing
 app.use(bodyParser.urlencoded({
@@ -30,7 +30,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // handlebars view engine init
-const exphbs = require("express-handlebars");
+var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({
     defaultLayout: "main"
 }));

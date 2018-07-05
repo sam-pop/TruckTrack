@@ -1,8 +1,9 @@
 var db = require("../models");
+var isAuth_Destroy = require("../config/middleware/isAuth_Destroy");
 
 module.exports = function (app) {
     app.get('/', function (req, res) {
-        res.send('<h1>hello truck world!</h1>');
+        res.send('<h1>hello truck world!</h1>'); //TODO: change this
     });
 
     // renders the signup page for users
@@ -19,4 +20,8 @@ module.exports = function (app) {
     app.get("/login", function (req, res) {
         res.render('login');
     });
+
+    // logout
+    app.get("/logout", isAuth_Destroy.destroySession);
+
 };
