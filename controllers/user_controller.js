@@ -8,6 +8,13 @@ var db = require('../models');
 
 module.exports = function (app) {
 
+    //TODO: (GET) user profile page
+
+    //TODO: (PUT) user profile details / settings
+
+    //TODO: (GET) check if user isAuthenticated (already logged in)
+
+
     // authenticate user
     app.post('/auth', passport.authenticate('local', {
         successRedirect: '/profile',

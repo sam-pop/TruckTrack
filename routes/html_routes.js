@@ -2,7 +2,7 @@ var isAuth_Destroy = require("../config/middleware/isAuth_Destroy");
 
 module.exports = function (app) {
 
-    // root - renders the homepage (index)
+    // homepage (index)
     app.get('/', function (req, res) {
         res.render('index');
     });
