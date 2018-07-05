@@ -1,9 +1,10 @@
-var db = require("../models");
 var isAuth_Destroy = require("../config/middleware/isAuth_Destroy");
 
 module.exports = function (app) {
+
+    // root - renders the homepage (index)
     app.get('/', function (req, res) {
-        res.send('<h1>hello truck world!</h1>'); //TODO: change this
+        res.render('index');
     });
 
     // renders the signup page for users

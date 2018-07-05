@@ -1,10 +1,18 @@
 // Dependencies
 var User = require('../models/user');
 var passport = require("../config/passport");
+var isAuth_Destroy = require("../config/middleware/isAuth_Destroy");
+
 // Variables
 var db = require('../models');
 
 module.exports = function (app) {
+
+    // authenticate user
+    app.post('/auth', passport.authenticate('local', {
+        successRedirect: '/profile',
+        failureRedirect: '/'
+    }));
 
     // add new user
     app.post('/signup', function (req, res) {
