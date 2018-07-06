@@ -1,8 +1,11 @@
 body {
     padding-top: 54px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: gainsboro;
 }
 
-.navbar-custom,
+.navbar-custom, .custom-btn,
 footer {
     background: #2193b0;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
@@ -21,6 +24,16 @@ footer {
     background-color: transparent;
 }
 
+.custom-toggler.navbar-toggler {
+    border-color: rgba(255,255,203, 0.7);
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,203, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+h1.title {
+    margin: 5rem 0 3rem 0;
+}
 .navbar-custom .navbar-nav>li>a:hover,
 .navbar-custom .navbar-nav>li>a:focus,
 .navbar-custom .navbar-nav>.active>a:hover,
@@ -33,6 +46,9 @@ footer {
     color: white;
 }
 
+.custom-btn {
+    border-color: #2193b0;
+}
 
 @media (min-width: 992px) {
     body {
@@ -45,10 +61,6 @@ html {
     min-height: 100%;
 }
 
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-}
 
 footer {
     position: absolute;
