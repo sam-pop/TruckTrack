@@ -8,7 +8,19 @@ var db = require('../models');
 
 module.exports = function (app) {
 
-    //TODO: (GET) user profile page
+    // return user profile page
+    app.get('/profile/:id', function (req, res) {
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function (dbUser) {
+            var hbsObj = {
+                user: dbUser
+            };
+            res.render('userProfile', hbsObj);
+        });
+    });
 
     //TODO: (PUT) user profile details / settings
 
