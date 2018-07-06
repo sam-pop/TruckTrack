@@ -1,5 +1,4 @@
 // Dependencies
-var User = require('../models/user');
 var passport = require("../config/passport");
 var isAuth_Destroy = require("../config/middleware/isAuth_Destroy");
 
