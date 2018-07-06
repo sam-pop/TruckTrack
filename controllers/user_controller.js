@@ -8,7 +8,7 @@ var db = require('../models');
 module.exports = function (app) {
 
     // return user profile page
-    app.get('/profile/:id', function (req, res) {
+    app.get('/profile/:id', isAuth_Destroy.isAuthenticated, function (req, res) {
         db.User.findOne({
             where: {
                 id: req.params.id
@@ -25,11 +25,10 @@ module.exports = function (app) {
 
     //TODO: (GET) check if user isAuthenticated (already logged in)
 
-
     // authenticate user
-    app.post('/auth', passport.authenticate('local', {
+    app.post('/login', passport.authenticate('local', {
         successRedirect: '/profile',
-        failureRedirect: '/'
+        failureRedirect: '/err'
     }));
 
     // add new user
