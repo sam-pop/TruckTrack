@@ -25,7 +25,7 @@ module.exports = function (app) {
         });
     });
 
-    // returns all the trucks
+    // returns all the trucks and locations
     app.get('/api/trucks', function (req, res) {
         db.Truck.findAll({
             attributes: {
