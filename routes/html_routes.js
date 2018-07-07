@@ -19,9 +19,7 @@ module.exports = function (app) {
 
     // renders the login page
     app.get("/login", function (req, res) {
-        // if (!req.user)
         res.render('login');
-
     });
 
     // logout

@@ -1,18 +1,16 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var signUpForm = $("form.signup");
   var nameInput = $("input#inputName");
   var emailInput = $("input#inputEmail");
   var passwordInput = $("input#inputPassword");
 
-  signUpForm.on("submit", function(event) {
+  signUpForm.on("submit", function (event) {
     event.preventDefault();
     var userData = {
       name: nameInput.val().trim(),
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-
-    console.log(userData);
 
     if (!userData.email || !userData.password) {
       return;
@@ -25,11 +23,11 @@ $(document).ready(function() {
 
   function signUpUser(uEmail, uPassword, uName) {
     $.post("/signup", {
-      name: uName,
-      email: uEmail,
-      password: uPassword
-    })
-      .then(function(data) {
+        name: uName,
+        email: uEmail,
+        password: uPassword
+      })
+      .then(function (data) {
         window.location.replace(data);
       })
       .catch(handleLoginErr);

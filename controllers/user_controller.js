@@ -9,6 +9,9 @@ module.exports = function (app) {
 
     // authenticate user and redirect according to user type
     app.post('/login', passport.authenticate('local'), function (req, res) {
+        if (!req.user) {
+            res.redirect('/login');
+        }
         if (req.user.isTruckOwner)
             res.redirect('/profile/truck');
         else res.redirect('/profile');
@@ -17,7 +20,7 @@ module.exports = function (app) {
     // add new user
     app.post('/signup', function (req, res) {
         db.User.create(req.body).then(function (dbUser) {
-            res.redirect(307, '/login');
+            res.redirect('/login');
         }).catch(function (err) {
             res.status(500).json(err);
         });
@@ -33,6 +36,7 @@ module.exports = function (app) {
             var hbsObj = {
                 user: dbUser
             };
+            console.log('########################' + dbUser);
             res.render('userProfile', hbsObj);
         });
     });
