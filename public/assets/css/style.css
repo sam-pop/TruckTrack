@@ -59,6 +59,10 @@ h1.title {
     border-color: #2193b0;
 }
 
+h3.sponsors {
+    margin-top: 10rem;
+}
+
 @media (min-width: 992px) {
     body {
         padding-top: 56px;

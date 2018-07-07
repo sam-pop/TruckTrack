@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        catagory: {
+        category: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    // associates Truck with User (foreign key) 
+    // associates Truck with User (foreign key)
     Truck.associate = function (models) {
         Truck.belongsTo(models.User, {
             foreignKey: {
