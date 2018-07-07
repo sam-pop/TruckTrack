@@ -37,18 +37,33 @@ module.exports = function (app) {
         });
     });
 
-    // returns the truck profile page 
-    //TODO: check how to validate that the user is a truck owner (isTruckOwner = true in the user object)
-    app.get('/profile/truck/:id', isAuth_Destroy.isAuthenticated, function (req, res) {
+    // returns the truck's public profile page 
+    app.get('/profile/truck/:id', function (req, res) {
         db.Truck.findOne({
             where: {
-                userId: req.params.id
+                id: req.params.id,
             }
         }).then(function (dbTruck) {
             var hbsObj = {
                 truck: dbTruck
             };
             res.render('truckProfile', hbsObj);
+        });
+    });
+
+    // returns the truck's profile page 
+    //FIXME: need to pass the truck id or user id to the findOne function.
+
+    app.get('/profile/truck/', isAuth_Destroy.isAuthenticated, function (req, res) {
+        db.Truck.findOne({
+            where: {
+                id: null //FIXME: fix this
+            }
+        }).then(function (dbTruck) {
+            var hbsObj = {
+                truck: dbTruck
+            };
+            res.render('truckOwnerProfile', hbsObj);
         });
     });
 
