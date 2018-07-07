@@ -7,11 +7,12 @@ var db = require('../models');
 
 module.exports = function (app) {
 
-    // authenticate user
-    app.post('/login', passport.authenticate('local', {
-        successRedirect: '/profile',
-        failureRedirect: '/errLogin'
-    }));
+    // authenticate user and redirect according to user type
+    app.post('/login', passport.authenticate('local'), function (req, res) {
+        if (req.user.isTruckOwner)
+            res.redirect('/profile/truck');
+        else res.redirect('/profile');
+    });
 
     // add new user
     app.post('/signup', function (req, res) {
