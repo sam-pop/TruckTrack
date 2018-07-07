@@ -39,6 +39,8 @@ app.set("view engine", "handlebars");
 // router
 require('./routes/html_routes')(app);
 require('./controllers/user_controller')(app);
+require('./controllers/truck_controller')(app);
+
 
 // sequelize db sync + app listen
 db.sequelize.sync({

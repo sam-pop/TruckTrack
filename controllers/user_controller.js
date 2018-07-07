@@ -7,7 +7,7 @@ var db = require('../models');
 
 module.exports = function (app) {
 
-    // return user profile page
+    // returns the user profile page
     app.get('/profile/:id', isAuth_Destroy.isAuthenticated, function (req, res) {
         db.User.findOne({
             where: {
