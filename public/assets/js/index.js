@@ -1,5 +1,5 @@
-var baseCoords = [38.889463, -77.035146];
-var mymap = L.map('mapid').setView(baseCoords, 15);
+var baseCoords = [38.897663, -77.036574];
+var mymap = L.map('mapid').setView(baseCoords, 16);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.emerald/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic2FtLXBvcCIsImEiOiJjamhucjhhNXgwNTE0MzZwYWQxenprNG5kIn0.9c-GiLb45NYrZeAiy3TZ6w', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -12,7 +12,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.emerald/{z}/{x}/{y}.png?acce
 // Show my current location 
 var myLoc = mymap.locate({
     setView: true,
-    maxZoom: 15,
+    maxZoom: 16,
     // watch: true,
     enableHighAccuracy: true
 });
