@@ -57,7 +57,7 @@ module.exports = function (app) {
     app.get('/profile/truck/', isAuth_Destroy.isAuthenticated, function (req, res) {
         db.Truck.findOne({
             where: {
-                id: null //FIXME: fix this
+                UserId: req.user.id
             }
         }).then(function (dbTruck) {
             var hbsObj = {

@@ -16,7 +16,6 @@ module.exports = function (app) {
     // add new user
     app.post('/signup', function (req, res) {
         db.User.create(req.body).then(function (dbUser) {
-            console.log(dbUser); //TODO: delete, for testing only
             res.redirect(307, '/login');
         }).catch(function (err) {
             res.status(500).json(err);
@@ -24,15 +23,12 @@ module.exports = function (app) {
     });
 
     // returns the user profile page
-    //FIXME: need to pass the email address or user id to the findOne function. currently req.body.email is NULL
-    // app.get('/profile/:id', isAuth_Destroy.isAuthenticated, function (req, res) {
     app.get('/profile', isAuth_Destroy.isAuthenticated, function (req, res) {
         db.User.findOne({
             where: {
-                email: req.body.email
+                email: req.user.email
             }
         }).then(function (dbUser) {
-            console.log('##########' + dbUser);
             var hbsObj = {
                 user: dbUser
             };
