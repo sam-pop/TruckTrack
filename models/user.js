@@ -47,7 +47,7 @@ module.exports = function (sequelize, DataTypes) {
 
     // pre table creation hook to hash the user password 
     User.hook("beforeCreate", function (user) {
-        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(12), null);
     });
 
     return User;
