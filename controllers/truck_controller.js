@@ -24,7 +24,7 @@ module.exports = function (app) {
 
     //TODO: (PUT) truck profile details / settings
 
-    //add new truck (+info and socialHandles)
+    //add new truck (user, truck and socialHandles)
     app.post('/truckSignup', function (req, res) {
         db.User.create(req.body).then(function (dbUser) {
             req.body.UserId = dbUser.id;
