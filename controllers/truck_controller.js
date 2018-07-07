@@ -7,24 +7,7 @@ var db = require('../models');
 
 module.exports = function (app) {
 
-    // returns the truck profile page 
-    //TODO: check how to validate that the user is a truck owner (isTruckOwner = true in the user object)
-    app.get('/profile/truck/:id', isAuth_Destroy.isAuthenticated, function (req, res) {
-        db.Truck.findOne({
-            where: {
-                userId: req.params.id
-            }
-        }).then(function (dbTruck) {
-            var hbsObj = {
-                truck: dbTruck
-            };
-            res.render('truckProfile', hbsObj);
-        });
-    });
-
-    //TODO: (PUT) truck profile details / settings
-
-    //add new truck (user, truck and socialHandles)
+    // add new truck (user, truck and socialHandles)
     app.post('/truckSignup', function (req, res) {
         req.body.isTruckOwner = true;
         db.User.create(req.body).then(function (dbUser) {
@@ -42,8 +25,38 @@ module.exports = function (app) {
         });
     });
 
+    // returns all the trucks
+    app.get('/api/trucks', function (req, res) {
+        db.Truck.findAll({
+            attributes: {
+                exclude: ['licensePlate', 'UserId']
+            },
+            include: [db.Location]
+        }).then(function (dbTrucks) {
+            res.json(dbTrucks);
+        });
+    });
+
+    // returns the truck profile page 
+    //TODO: check how to validate that the user is a truck owner (isTruckOwner = true in the user object)
+    app.get('/profile/truck/:id', isAuth_Destroy.isAuthenticated, function (req, res) {
+        db.Truck.findOne({
+            where: {
+                userId: req.params.id
+            }
+        }).then(function (dbTruck) {
+            var hbsObj = {
+                truck: dbTruck
+            };
+            res.render('truckProfile', hbsObj);
+        });
+    });
+
+    //TODO: (PUT) truck profile details / settings
+
+
     // updates the truck location
-    app.put('/profile/truck/:id/setLocation', function (req, res) {
+    app.put('/profile/truck/:id/setLocation', isAuth_Destroy.isAuthenticated, function (req, res) {
         db.Location.update(req.body, {
             where: {
                 TruckId: req.params.id

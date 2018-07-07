@@ -42,6 +42,9 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
+        Truck.hasOne(models.Location, {
+            foreignKey: 'TruckId'
+        });
     };
 
     return Truck;
