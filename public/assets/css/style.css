@@ -5,12 +5,19 @@ body {
     background-color: gainsboro;
 }
 
-.navbar-custom, .custom-btn,
-footer {
-    background: #2193b0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+#mapid {
+    height: 380px;
+}
 
+.navbar-custom,
+.custom-btn,
+footer {
+    background: #2193b0;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #ffffff;
     border-radius: 0;
 }
@@ -25,8 +32,9 @@ footer {
 }
 
 .custom-toggler.navbar-toggler {
-    border-color: rgba(255,255,203, 0.7);
+    border-color: rgba(255, 255, 203, 0.7);
 }
+
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,203, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -34,6 +42,7 @@ footer {
 h1.title {
     margin: 5rem 0 3rem 0;
 }
+
 .navbar-custom .navbar-nav>li>a:hover,
 .navbar-custom .navbar-nav>li>a:focus,
 .navbar-custom .navbar-nav>.active>a:hover,
@@ -60,7 +69,6 @@ html {
     position: relative;
     min-height: 100%;
 }
-
 
 footer {
     position: absolute;
