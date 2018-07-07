@@ -28,7 +28,7 @@ module.exports = function (app) {
     // authenticate user
     app.post('/login', passport.authenticate('local', {
         successRedirect: '/profile',
-        failureRedirect: '/err'
+        failureRedirect: '/login'
     }));
 
     // add new user

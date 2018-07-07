@@ -24,7 +24,20 @@ module.exports = function (app) {
 
     //TODO: (PUT) truck profile details / settings
 
-    //TODO: (POST) add new truck (info and socialHandles)
+    //add new truck (+info and socialHandles)
+    app.post('/truckSignup', function (req, res) {
+        db.User.create(req.body).then(function (dbUser) {
+            req.body.UserId = dbUser.id;
+            db.Truck.create(req.body).then(function (dbTruck) {
+                req.body.TruckId = dbTruck.id;
+                db.SocialHandles.create(req.body).then(function (dbSocial) {
+                    res.redirect(307, '/login');
+                });
+            }).catch(function (err) {
+                res.status(500).json(err);
+            });
+        });
+    });
 
     //TODO: (POST/PUT) add/update truck location
 

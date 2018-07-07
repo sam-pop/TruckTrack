@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
     // create our Truck table
     var Truck = sequelize.define("Truck", {
-        name: {
+        truckName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
