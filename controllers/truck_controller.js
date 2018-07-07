@@ -26,12 +26,15 @@ module.exports = function (app) {
 
     //add new truck (user, truck and socialHandles)
     app.post('/truckSignup', function (req, res) {
+        req.body.isTruckOwner = true;
         db.User.create(req.body).then(function (dbUser) {
             req.body.UserId = dbUser.id;
             db.Truck.create(req.body).then(function (dbTruck) {
                 req.body.TruckId = dbTruck.id;
                 db.SocialHandles.create(req.body).then(function (dbSocial) {
-                    res.redirect(307, '/login');
+                    db.Location.create(req.body).then(function (dbLocation) {
+                        res.redirect(307, '/login');
+                    });
                 });
             }).catch(function (err) {
                 res.status(500).json(err);
@@ -39,6 +42,16 @@ module.exports = function (app) {
         });
     });
 
-    //TODO: (POST/PUT) add/update truck location
+    // updates the truck location
+    app.put('/profile/truck/:id/setLocation', function (req, res) {
+        db.Location.update(req.body, {
+            where: {
+                TruckId: req.params.id
+            }
+        }).then(function () {
+            console.log("location updated!");
+            res.redirect(307, '/profile/truck/'); //TODO: test if this is the right path
+        });
+    });
 
 };

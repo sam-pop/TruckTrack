@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
     var Location = sequelize.define("Location", {
         lat: {
             type: DataTypes.FLOAT,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 isFloat: true,
                 len: [1]
@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         lon: {
             type: DataTypes.FLOAT,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 isFloat: true,
                 len: [1]
@@ -19,7 +19,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         updateTime: {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 isDate: true,
                 len: [1]
