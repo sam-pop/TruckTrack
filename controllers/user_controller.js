@@ -28,16 +28,20 @@ module.exports = function (app) {
 
     // returns the user profile page
     app.get('/profile', isAuth_Destroy.isAuthenticated, function (req, res) {
-        db.User.findOne({
-            where: {
-                email: req.user.email
-            }
-        }).then(function (dbUser) {
-            var hbsObj = {
-                user: dbUser
-            };
-            res.render('userProfile', hbsObj);
-        });
+        if (req.user.isTruckOwner)
+            res.redirect('/profile/truck');
+        else {
+            db.User.findOne({
+                where: {
+                    email: req.user.email
+                }
+            }).then(function (dbUser) {
+                var hbsObj = {
+                    user: dbUser
+                };
+                res.render('userProfile', hbsObj);
+            });
+        }
     });
 
     //TODO: (PUT) user profile details / settings
