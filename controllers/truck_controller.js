@@ -53,7 +53,6 @@ module.exports = function (app) {
 
     // returns the truck's profile page 
     //FIXME: need to pass the truck id or user id to the findOne function.
-
     app.get('/profile/truck/', isAuth_Destroy.isAuthenticated, function (req, res) {
         db.Truck.findOne({
             where: {
