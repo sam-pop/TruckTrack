@@ -46,5 +46,5 @@ require('./controllers/truck_controller')(app);
 db.sequelize.sync({
     force: true
 }).then(function () {
-    app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+    app.listen(PORT, () => console.log(` | Server listening on port ${PORT} |` + '\n ---------------------------------'));
 });
