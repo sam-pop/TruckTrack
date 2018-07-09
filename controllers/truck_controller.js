@@ -69,16 +69,37 @@ module.exports = function (app) {
     //TODO: (PUT) truck profile details / settings
 
 
-    // updates the truck location
-    app.put('/profile/truck/:id/setLocation', isAuth_Destroy.isAuthenticated, function (req, res) {
-        db.Location.update(req.body, {
+    // gets the truck stored location
+    app.get('/profile/truck/getLocation', isAuth_Destroy.isAuthenticated, function (req, res) {
+        db.Truck.findOne({
             where: {
-                TruckId: req.params.id
+                UserId: req.user.id
             }
-        }).then(function () {
-            console.log("location updated!");
-            res.redirect(307, '/profile/truck/'); //TODO: test if this is the right path
+        }).then(function (dbTruck) {
+            db.Location.findOne({
+                where: {
+                    TruckId: dbTruck.id
+                }
+            }).then(function (loc) {
+                res.json(loc);
+            });
         });
     });
 
-};
+    // updates the truck location
+    app.post('/profile/truck/setLocation', isAuth_Destroy.isAuthenticated, function (req, res) {
+        db.Truck.findOne({
+            where: {
+                UserId: req.user.id
+            }
+        }).then(function (dbTruck) {
+            db.Location.update(req.body, {
+                where: {
+                    TruckId: dbTruck.id
+                }
+            }).then(function () {
+                console.log("location updated!");
+            });
+        });
+    });
+}

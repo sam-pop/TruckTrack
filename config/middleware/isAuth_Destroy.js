@@ -2,7 +2,7 @@ exports.isAuthenticated = function (req, res, next) {
     if (req.isAuthenticated()) {
         next();
     } else {
-        return res.redirect('/errAuth');
+        return res.redirect('/login');
     }
 };
 
