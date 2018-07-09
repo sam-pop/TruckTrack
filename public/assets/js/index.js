@@ -62,4 +62,5 @@ $(function () {
       truckMarker.addTo(mymap);
     }
   });
+
 });

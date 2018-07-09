@@ -7,6 +7,12 @@ var db = require('../models');
 
 module.exports = function (app) {
 
+    //isAuth 
+    app.get('/auth', isAuth_Destroy.isAuthenticated, function (req, res) {
+        if (req.user)
+            res.json(true);
+    });
+
     // authenticate user and redirect according to user type
     app.post('/login', passport.authenticate('local'), function (req, res) {
         if (!req.user) {
