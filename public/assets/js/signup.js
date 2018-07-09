@@ -23,14 +23,10 @@ $(document).ready(function () {
 
   function signUpUser(uEmail, uPassword, uName) {
     $.post("/signup", {
-        name: uName,
-        email: uEmail,
-        password: uPassword
-      })
-      .then(function (data) {
-        window.location.replace(data);
-      })
-      .catch(handleLoginErr);
+      name: uName,
+      email: uEmail,
+      password: uPassword
+    }).catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {

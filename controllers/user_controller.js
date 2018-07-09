@@ -36,7 +36,6 @@ module.exports = function (app) {
             var hbsObj = {
                 user: dbUser
             };
-            console.log('########################' + dbUser);
             res.render('userProfile', hbsObj);
         });
     });
