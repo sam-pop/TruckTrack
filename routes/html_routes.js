@@ -19,7 +19,9 @@ module.exports = function (app) {
 
     // renders the login page
     app.get("/login", function (req, res) {
-        res.render('login');
+        if (!req.user)
+            res.render('login');
+        else res.render('index');
     });
 
     // logout

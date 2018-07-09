@@ -1,9 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var loginForm = $("form.loginForm");
   var emailInput = $("input#inputEmail");
   var passwordInput = $("input#inputPassword");
 
-  loginForm.on("submit", function(event) {
+  loginForm.on("submit", function (event) {
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
@@ -23,9 +23,7 @@ $(document).ready(function() {
     $.post("/login", {
       email: lEmail,
       password: lPassword
-    }).then(function(data) {
-      window.location.replace(data);
-    }).catch(function(err) {
+    }).catch(function (err) {
       console.log(err);
     });
   }
