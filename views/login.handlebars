@@ -1,23 +1,20 @@
 <div class="container">
     <div class="row h-100 justify-content-center">
         <div class="col-md-8 align-self-center my-5">
-            <h1 class="text-center">Login</h1>
-            <form method="POST" action="/login">
+            <h1 class="text-center">Log-in</h1>
+            <form method="POST" class="login">
                 <div class="form-group">
-                    <label for="inputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 <div class="form-group">
                     <label for="inputPassword1">Password</label>
-                    <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Choose a password">
                 </div>
-                <button type="submit" class="btn btn-primary custom-btn my-2">Submit</button>
-                <br>
-                <a href="/signup">New User Please Sign Up</a>
-                <br>
-                <a href="/signupTruck">Truck Owner Please Sign Up</a>
+                <button type="submit" class="btn btn-primary custom-btn">Log in</button>
             </form>
         </div>
     </div>
+    or
+    <a href="/signup">Sign-up</a>
 </div>
