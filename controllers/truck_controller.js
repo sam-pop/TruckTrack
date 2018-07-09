@@ -76,6 +76,7 @@ module.exports = function (app) {
                     TruckId: dbTruck.id
                 }
             }).then(function () {
+                res.json(req.body);
                 console.log("Location Updated!");
             });
         });

@@ -1,9 +1,9 @@
 $(function () {
+
     getGeoLocaion();
     $('#locationBtn').on('click', function (event) {
         setTimeout(function () {
             updateLocation(myLoc);
-            alert('location updated!');
         }, 5000);
 
     });
@@ -28,6 +28,10 @@ function myLocation(position) {
 
 function updateLocation(latlon) {
     $.post('/profile/truck/setLocation', latlon, function (data) {
-        console.log(data);
+        if (data.lat && data.lon)
+            alert('Location Updated!');
+        else {
+            alert('Location not found! try again...');
+        }
     });
 }
