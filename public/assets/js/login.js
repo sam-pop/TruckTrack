@@ -23,6 +23,8 @@ $(document).ready(function () {
     $.post("/login", {
       email: uEmail,
       password: uPassword
+    }, function () {
+      location.reload();
     }).catch(handleLoginErr);
   }
 
