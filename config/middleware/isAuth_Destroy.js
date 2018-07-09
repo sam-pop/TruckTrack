@@ -1,3 +1,4 @@
+// checks if the user is already authenticated, if not redirects the user to the login page
 exports.isAuthenticated = function (req, res, next) {
     if (req.isAuthenticated()) {
         next();
@@ -6,6 +7,7 @@ exports.isAuthenticated = function (req, res, next) {
     }
 };
 
+// logout and destroy the user session
 exports.destroySession = function (req, res, next) {
     req.logOut();
     req.session.destroy();

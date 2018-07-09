@@ -1,5 +1,4 @@
 // Dependencies
-var passport = require("../config/passport");
 var isAuth_Destroy = require("../config/middleware/isAuth_Destroy");
 
 // Variables
@@ -52,7 +51,6 @@ module.exports = function (app) {
     });
 
     // returns the truck's profile page 
-    //FIXME: need to pass the truck id or user id to the findOne function.
     app.get('/profile/truck/', isAuth_Destroy.isAuthenticated, function (req, res) {
         db.Truck.findOne({
             where: {
@@ -66,9 +64,6 @@ module.exports = function (app) {
         });
     });
 
-    //TODO: (PUT) truck profile details / settings
-
-
     // gets the truck stored location
     app.get('/profile/truck/getLocation', isAuth_Destroy.isAuthenticated, function (req, res) {
         db.Truck.findOne({
@@ -80,8 +75,8 @@ module.exports = function (app) {
                 where: {
                     TruckId: dbTruck.id
                 }
-            }).then(function (loc) {
-                res.json(loc);
+            }).then(function (data) {
+                console.log(data);
             });
         });
     });
@@ -98,8 +93,11 @@ module.exports = function (app) {
                     TruckId: dbTruck.id
                 }
             }).then(function () {
-                console.log("location updated!");
+                console.log("Location Updated!");
             });
         });
     });
-}
+
+    //TODO: (PUT) truck profile details / settings
+
+};

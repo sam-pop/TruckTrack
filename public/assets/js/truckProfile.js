@@ -1,14 +1,14 @@
-$(function () {
-    getGeoLocaion();
-    getLocation();
-    $('#locationBtn').on('click', function (event) {
-        setTimeout(function () {
-            updateLocation(myLoc);
-            alert('location updated!');
-        }, 5000);
+// $(function () {
+//     getGeoLocaion();
+//     // getLocation();
+//     $('#locationBtn').on('click', function (event) {
+//         setTimeout(function () {
+//             updateLocation(myLoc);
+//             alert('location updated!');
+//         }, 5000);
 
-    });
-});
+//     });
+// });
 
 function getGeoLocaion() {
     if (navigator.geolocation) {
@@ -27,14 +27,14 @@ function myLocation(position) {
     };
 }
 
-function updateLocation(latlon) {
-    $.post('/profile/truck/setLocation', latlon, function (data) {
-        console.log(data);
-    });
-}
+// function updateLocation(latlon) {
+//     $.post('/profile/truck/setLocation', latlon, function (data) {
+//         console.log(data);
+//     });
+// }
 
-function getLocation() {
-    $.get('/profile/truck/getLocation', function (data) {
-        console.log(data);
-    });
-}
+// function getLocation() {
+//     $.get('/profile/truck/getLocation', function (data) {
+//         console.log(data);
+//     });
+// }

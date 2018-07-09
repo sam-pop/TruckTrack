@@ -10,7 +10,8 @@ module.exports = function (app) {
     //isAuth 
     app.get('/auth', isAuth_Destroy.isAuthenticated, function (req, res) {
         if (req.user)
-            res.json(true);
+            res.send(true);
+        else res.send(false);
     });
 
     // authenticate user and redirect according to user type
