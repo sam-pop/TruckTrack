@@ -7,11 +7,11 @@ var db = require('../models');
 
 module.exports = function (app) {
 
-    //isAuth 
+    //checks if the user isAuthenticated 
     app.get('/auth', isAuth_Destroy.isAuthenticated, function (req, res) {
-        if (req.user)
-            res.send(true);
-        else res.send(false);
+        if (!req.user)
+            res.redirect('/login');
+        else res.json(true);
     });
 
     // authenticate user and redirect according to user type

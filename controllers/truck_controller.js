@@ -64,23 +64,6 @@ module.exports = function (app) {
         });
     });
 
-    // gets the truck stored location
-    app.get('/profile/truck/getLocation', isAuth_Destroy.isAuthenticated, function (req, res) {
-        db.Truck.findOne({
-            where: {
-                UserId: req.user.id
-            }
-        }).then(function (dbTruck) {
-            db.Location.findOne({
-                where: {
-                    TruckId: dbTruck.id
-                }
-            }).then(function (data) {
-                console.log(data);
-            });
-        });
-    });
-
     // updates the truck location
     app.post('/profile/truck/setLocation', isAuth_Destroy.isAuthenticated, function (req, res) {
         db.Truck.findOne({
