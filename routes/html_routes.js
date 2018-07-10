@@ -19,8 +19,10 @@ module.exports = function (app) {
   });
 
   // renders the signup page for truck owners
-  app.get('/signupTruck', function (req, res) {
+  app.get('/signupTruck', function(req, res) {
+    if(!req.user)
     res.render('signupTruck');
+    else res.render('truckOwnerProfile')
   });
 
   // renders the login page
@@ -36,6 +38,10 @@ module.exports = function (app) {
 
   app.get('/userProfileUpdate', function (req, res) {
     res.render('userProfileUpdate');
+  });
+
+  app.get('/truckProfileUpdate', function(req, res) {
+    res.render('truckProfileUpdate');
   });
 
   // logout
