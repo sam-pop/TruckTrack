@@ -30,6 +30,17 @@ var myLoc = mymap.locate({
 //   shadowAnchor: [22, 94]
 // });
 
+// truck location custom icon
+var truckCustomMaker = L.icon({
+  iconUrl: "./assets/img/marker.png",
+  iconSize: [34, 44],
+  iconAnchor: [20, 36],
+  popupAnchor: [-3, -76],
+  shadowUrl: "",
+  shadowSize: [68, 95],
+  shadowAnchor: [22, 94]
+});
+
 // Current location success function
 function onLocationFound(e) {
   // mymap.removeLayer(currentMarker);
@@ -57,7 +68,7 @@ $(function () {
     for (var i of data) {
       var latlon = [i.Location.lat, i.Location.lon];
       var truckMarker = L.marker(latlon, {
-        // icon: truckIcon
+        icon: truckCustomMaker
       });
       truckMarker.bindPopup(i.truckName);
       truckMarker.addTo(mymap);
