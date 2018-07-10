@@ -41,10 +41,18 @@ Node.js
 Passport
 Handlebars
 Request
+Express
 
 
 We used different technologies such as jQuery, Javascript, HTML, Node.js, CSS. 
 
+This application uses user authentication, as well as uses the MVC folder structure.
+
+
+
 ##Authors
 
 Sam, Stanley, and Katie.
+
+##Links
+Heroku
