@@ -28,6 +28,12 @@
                     <i>Please add a menu link!</i>
                 </p>
                 {{/if}}
+                <div class="text-center">
+                    <p class="card-text" style="padding-left:5px;">
+                        <a href="/truckProfileUpdate">Update your account</a>
+                    </p>
+                </div>
+                <br>
                 <img class="card-img-bottom" src="{{truck.pictureURL}}" alt="Food truck picture" style="opacity: 0.8;">
             </div>
             <div class="text-center">
@@ -35,16 +41,6 @@
                     <small class="text-muted">Profile last updated: {{truck.updatedAt}}</small>
                 </p>
             </div>
-
-
-<button id="locationBtn" class="btn btn-success">update location</button>
-<div class="row my-3">
-    <div class="col-md-12">
-        <div class="col">
-            <a href="/truckProfileUpdate">Update your account</a>
-        </div>
-    </div>
-</div>
         </div>
 
 
