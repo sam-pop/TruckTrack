@@ -43,10 +43,21 @@ Handlebars
 Request
 Express
 
+##Technologies
 
-We used different technologies such as jQuery, Javascript, HTML, Node.js, CSS. 
+
+jQuery
+Javascript
+HTML
+Node.js
+CSS
+leaflet
+moment.js
+animate.js
+jqueryui
 
 This application uses user authentication, as well as uses the MVC folder structure.
+
 
 
 

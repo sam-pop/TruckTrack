@@ -6,6 +6,7 @@ var passport = require("./config/passport");
 
 // Variables
 var PORT = process.env.PORT || 8080;
+
 var db = require('./models');
 var app = express(); // express app init
 
