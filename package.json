@@ -31,6 +31,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^4.38.0",
+    "sequelize-fixtures": "^0.7.0",
     "validator": "^10.4.0"
   }
 }

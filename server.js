@@ -3,6 +3,10 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
 var passport = require("./config/passport");
+var sequelize_fixtures = require('sequelize-fixtures');
+var models = require('./models');
+
+
 
 // Variables
 var PORT = process.env.PORT || 8080;
@@ -44,8 +48,10 @@ require('./routes/html_routes')(app);
 
 
 // sequelize db sync + app listen
+
 db.sequelize.sync({
     force: true
 }).then(function () {
+    sequelize_fixtures.loadFile('./db/test_data.json', models);
     app.listen(PORT, () => console.log(` | Server listening on port ${PORT} |` + '\n ---------------------------------'));
 });

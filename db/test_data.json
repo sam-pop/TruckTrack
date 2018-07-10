@@ -1,0 +1,29 @@
+[{
+        "model": "User",
+        "data": {
+            "name": "Yev Kassem",
+            "email": "a@gmail.com",
+            "password": "a",
+            "isTruckOwner": true
+
+        }
+    }, {
+        "model": "Truck",
+        "data": {
+            "truckName": "The soup truck",
+            "desc": "The best artisans soups in town!",
+            "category": "Soups, Bread",
+            "licensePlate": "S0UPN4Z1",
+            "pictureURL": "https://fortcollinsfoodtrucks.com/wp-content/uploads/2015/01/austin-taco-food-truck-fort-collins1.jpg",
+            "UserId": 1
+        }
+    },
+    {
+        "model": "Location",
+        "data": {
+            "lat": 0,
+            "lon": 0,
+            "TruckId": 1
+        }
+    }
+]
