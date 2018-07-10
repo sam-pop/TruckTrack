@@ -24,6 +24,11 @@ module.exports = function(app) {
     else res.redirect('/profile');
   });
 
+  app.get('/about', function(req, res) {
+    if (!req.user)
+      res.render('about');
+  });
+
   app.get('/userProfileUpdate', function(req, res) {
     res.render('userProfileUpdate');
   });
