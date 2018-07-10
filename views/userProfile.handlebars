@@ -1,2 +1,80 @@
-<h1>Hello {{user.name}}</h1>
-email: {{user.email}}
+<header class="mt-5">
+    <h1 class="text-center mt-5">Welcome to your profile page {{user.name}}</h1>
+</header>
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="col-md-12">
+            <h2>Select your favorite food trucks</h2>
+
+            <form>
+                <div class="form-check">
+                    <label class="form-check-label" for="check1">
+                        <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>Fiesta
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="check2">
+                        <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">A Taste of Italy
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" disabled>Fish and Chips
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="check1">
+                        <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>The Big Burger
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="check2">
+                        <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">Option 2
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" disabled>Option 3
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+</div>
+
+
+
+    <!--email: {{user.email}}-->
+
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center">
+        <div class="col-md-8 align-self-center my-5">
+            <h1 class="text-center">Update your profile</h1>
+
+            <form method="POST" class="signup">
+                <div class="form-group">
+                    <label for="name" class="badge-pill">Your Name:</label>
+                    <input type="text" class="form-control badge-pill" id="inputName" placeholder="Enter name" />
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="badge-pill">Email address:</label>
+                    <input type="email" class="form-control badge-pill" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword1" class="badge-pill">Password:</label>
+                    <input type="password" class="form-control badge-pill" width="10" id="inputPassword" placeholder="Choose a password">
+                </div>
+                <hr>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary custom-btn rounded">&nbsp;&nbsp;Update!&nbsp;&nbsp;</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,15 +1,15 @@
-$(document).ready(function () {
+$(document).ready(function() {
   var signUpForm = $("form.login");
   var emailInput = $("input#inputEmail");
   var passwordInput = $("input#inputPassword");
 
-  signUpForm.on("submit", function (event) {
+  signUpForm.on("submit", function(event) {
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-    console.log('​userData', userData);
+    console.log("​userData", userData);
 
     if (!userData.email || !userData.password) {
       return;
@@ -20,12 +20,16 @@ $(document).ready(function () {
   });
 
   function loginUser(uEmail, uPassword) {
-    $.post("/login", {
-      email: uEmail,
-      password: uPassword
-    }, function () {
-      location.reload();
-    }).catch(handleLoginErr);
+    $.post(
+      "/login",
+      {
+        email: uEmail,
+        password: uPassword
+      },
+      function() {
+        location.reload();
+      }
+    ).catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {
