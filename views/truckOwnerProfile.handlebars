@@ -1,9 +1,27 @@
-<h1>
-    truckOwnerProfile page!</h1>
-truck name: {{truck.truckName}}
+<div id="truckID" data-id="{{truck.id}}"></div>
+<br>
+<div class="row justify-content-center">
+    <div class="col-sm col-md-8 align-self-center">
+        <div class="card mb-3">
+            <div class="card-block">
+                <button id="locationBtn" class="btn btn-primary btn-block ">Click here to update your location</button>
+                <small class="text-muted" id="locUpdate"></small>
+
+                <h1 class="card-title text-center" style="color: #2193b0; text-shadow: 1px 1px 2px gray;">Welcome {{truck.truckName}}.</h1>
+
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content
+                    is a little bit longer.</p>
+                <p class="card-text">
+                    <small class="text-muted">Last updated {{truck.updatedAt}}</small>
+                </p>
+            </div>
+            <img class="card-img-bottom" src="{{truck.pictureURL}}" alt="Food truck picture" style="opacity: 0.8;">
+
+        </div>
 
 
-<button id="locationBtn" class="btn btn-success">update location</button>
+    </div>
+</div>
 
 
 {{> tpScript}}

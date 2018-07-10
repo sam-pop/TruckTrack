@@ -66,6 +66,8 @@ module.exports = function (app) {
 
     // updates the truck location
     app.post('/profile/truck/setLocation', isAuth_Destroy.isAuthenticated, function (req, res) {
+        console.log(req.user);
+
         db.Truck.findOne({
             where: {
                 UserId: req.user.id
@@ -81,6 +83,19 @@ module.exports = function (app) {
             });
         });
     });
+
+    // returns the truck last updated location
+    app.post('/profile/truck/lastLocation', isAuth_Destroy.isAuthenticated, function (req, res) {
+        db.Location.findOne({
+            where: {
+                TruckId: req.body.id
+            }
+        }).then(function (dbLocation) {
+            res.json(dbLocation);
+            console.log("Location Returned!");
+        });
+    });
+
 
     //TODO: (PUT) truck profile details / settings
 
