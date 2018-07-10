@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var signUpForm = $("form.truckSignup");
   var ownerNameInput = $("input#ownerName");
   var truckNameInput = $("input#truckName");
@@ -14,7 +14,7 @@ $(document).ready(function() {
   var twitterHandle = $("input#twitterHandle");
   var instagramHandle = $("input#instagramHandle");
 
-  signUpForm.on("submit", function(event) {
+  signUpForm.on("submit", function (event) {
     event.preventDefault();
 
     var truckData = {
@@ -36,18 +36,18 @@ $(document).ready(function() {
       return;
     }
     truckSignup(
-        truckData.name,
-        truckData.truckName,
-        truckData.email,
-        truckData.password,
-        truckData.desc,
-        truckData.foodCategory,
-        truckData.licensePlate,
-        truckData.pictureUrl,
-        truckData.menuUrl,
-        truckData.facebookID,
-        truckData.twitterHandle,
-        truckData.instagramHandle
+      truckData.name,
+      truckData.truckName,
+      truckData.email,
+      truckData.password,
+      truckData.desc,
+      truckData.foodCategory,
+      truckData.licensePlate,
+      truckData.pictureUrl,
+      truckData.menuUrl,
+      truckData.facebookID,
+      truckData.twitterHandle,
+      truckData.instagramHandle
     );
 
     emailInput.val("");
@@ -65,36 +65,35 @@ $(document).ready(function() {
   });
 
   function truckSignup(
-      uName,
-      tName,
-      tEmail,
-      tPassword,
-      tDesc,
-      tFoodCategory,
-      tLicensePlate,
-      tPictureUrl,
-      tMenuUrl,
-      tFacebookID,
-      tTwitterHandle,
-      tInstagramHandle
+    uName,
+    tName,
+    tEmail,
+    tPassword,
+    tDesc,
+    tFoodCategory,
+    tLicensePlate,
+    tPictureUrl,
+    tMenuUrl,
+    tFacebookID,
+    tTwitterHandle,
+    tInstagramHandle
   ) {
     $.post("/truckSignup", {
-          truckName: tName,
-          email: tEmail,
-          password: tPassword,
-          name: uName,
-          desc: tDesc,
-          category: tFoodCategory,
-          menuUrl: tMenuUrl,
-          pictureUrl: tPictureUrl,
-          licensePlate: tLicensePlate,
-          facebook: tFacebookID,
-          twitter: tTwitterHandle,
-          instagram: tInstagramHandle
-        },function() {
-          location.reload();
-        }
-    ).catch(handleLoginErr);
+      truckName: tName,
+      email: tEmail,
+      password: tPassword,
+      name: uName,
+      desc: tDesc,
+      category: tFoodCategory,
+      menuURL: tMenuUrl,
+      pictureURL: tPictureUrl,
+      licensePlate: tLicensePlate,
+      facebook: tFacebookID,
+      twitter: tTwitterHandle,
+      instagram: tInstagramHandle
+    }, function () {
+      location.reload();
+    }).catch(handleLoginErr);
   }
 
   function handleLoginErr() {
