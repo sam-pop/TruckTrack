@@ -27,7 +27,7 @@ module.exports = function (app) {
     // add new user
     app.post('/signup', function (req, res) {
         db.User.create(req.body).then(function (dbUser) {
-          res.redirect(307, '/login');
+            res.redirect(307, '/login');
         }).catch(function (err) {
             res.status(500).json(err);
         });
@@ -51,18 +51,16 @@ module.exports = function (app) {
         }
     });
 
-    app.put('/userProfileUpdate', function(req, res) {
-        console.log(req.body)
-      db.User.update({
-        name: req.body.name,
-        email: req.body.email
-      }, {
-          where: {
-              id: req.user.id
-          }
-      }
-    )
-    })
+    app.put('/userProfileUpdate', function (req, res) {
+        db.User.update({
+            name: req.body.name,
+            email: req.body.email
+        }, {
+            where: {
+                id: req.user.id
+            }
+        });
+    });
 
     //TODO: (PUT) user profile details / settings
 
