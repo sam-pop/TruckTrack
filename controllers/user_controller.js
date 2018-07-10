@@ -7,7 +7,7 @@ var db = require('../models');
 
 module.exports = function (app) {
 
-    //checks if the user isAuthenticated 
+    //checks if the user isAuthenticated
     app.get('/auth', isAuth_Destroy.isAuthenticated, function (req, res) {
         if (!req.user)
             res.redirect('/login');
@@ -50,6 +50,19 @@ module.exports = function (app) {
             });
         }
     });
+
+    app.put('/userProfileUpdate', function(req, res) {
+        console.log(req.body)
+      db.User.update({
+        name: req.body.name,
+        email: req.body.email
+      }, {
+          where: {
+              id: req.user.id
+          }
+      }
+    )
+    })
 
     //TODO: (PUT) user profile details / settings
 
