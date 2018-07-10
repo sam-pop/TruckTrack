@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "Wu86z!6FPQ$x",
+        "password": "",
         "database": "trucktrack_db",
         "host": "127.0.0.1",
         "dialect": "mysql"
