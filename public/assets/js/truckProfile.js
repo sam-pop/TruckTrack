@@ -13,11 +13,14 @@ $(function () {
             $('#locationBtn').text('Updating...');
             setTimeout(function () {
                 updateLocation(locUpdated);
-                lastLocation(lastLoc);
                 $('#locationBtn').removeClass('disabled btn-outline-info');
                 $('#locationBtn').addClass('btn-info');
                 $('#locationBtn').text('Update your location again');
+                setTimeout(function () {
+                    lastLocation(lastLoc);
+                }, 500);
             }, 5000);
+
         }
     });
 });

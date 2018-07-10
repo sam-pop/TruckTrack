@@ -14,10 +14,17 @@
                     <b>Truck Category: </b>{{truck.category}}.</p>
                 <p class="card-text" style="padding-left:5px;">
                     <b>Truck Description: </b>{{truck.desc}}.</p>
+                {{#if truck.menuURL}}
                 <p class="card-text" style="padding-left:5px;">
                     <b>Truck Menu: </b>
                     <a href="{{truck.menuURL}}">View Menu!</a>
                 </p>
+                {{else}}
+                <p class="card-text" style="padding-left:5px;">
+                    <b>Truck Menu: </b>
+                    <i> Menu not available.</i>
+                </p>
+                {{/if}}
                 <img class="card-img-bottom" src="{{truck.pictureURL}}" alt="Food truck picture" style="opacity: 0.8;">
             </div>
             <div class="text-center">
