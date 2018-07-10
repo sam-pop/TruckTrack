@@ -27,7 +27,7 @@ module.exports = function (app) {
     // add new user
     app.post('/signup', function (req, res) {
         db.User.create(req.body).then(function (dbUser) {
-            res.redirect('/login');
+          res.redirect(307, '/login');
         }).catch(function (err) {
             res.status(500).json(err);
         });
