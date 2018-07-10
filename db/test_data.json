@@ -21,8 +21,8 @@
     {
         "model": "Location",
         "data": {
-            "lat": 0,
-            "lon": 0,
+            "lat": 38.909032,
+            "lon": -77.043390,
             "TruckId": 1
         }
     }
