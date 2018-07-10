@@ -45,7 +45,7 @@ function myLocation(position) {
 function updateLocation(latlon) {
     $.post("/profile/truck/setLocation", latlon, function (data) {
         if (data.lat && data.lon) {
-            alert("Location Updated!");
+            $('#locationBtn').text('Location updated successfully!');
         } else {
             alert("Location not found! try again...");
         }
