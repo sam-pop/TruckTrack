@@ -85,7 +85,7 @@ $(function () {
           'src': i.pictureURL,
           'width': '255',
           'height': '153'
-        });
+        }).addClass('shadow-sm');
         link.append(pic);
         main.append(link);
         main.append(name);
