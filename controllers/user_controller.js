@@ -59,8 +59,8 @@ module.exports = function (app) {
             where: {
                 id: req.user.id
             }
-        })
-    })
+        });
+    });
 
     //TODO: (PUT) user profile details / settings
 

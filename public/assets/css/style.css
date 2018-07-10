@@ -5,6 +5,10 @@ body {
     background-color: gainsboro;
 }
 
+.content {
+    margin-top: 5rem;
+}
+
 #mapid {
     height: 380px;
 }

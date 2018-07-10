@@ -9,9 +9,14 @@ module.exports = function(app) {
 
   // renders the signup page for users
   app.get('/signup', function(req, res) {
+    if(!req.user)
     res.render('signup');
+    else res.redirect('/UserProfile')
   });
 
+  app.get('/userProfile', function(req, res) {
+    res.render('userProfile')
+  })
   // renders the signup page for truck owners
   app.get('/signupTruck', function(req, res) {
     res.render('signupTruck');
