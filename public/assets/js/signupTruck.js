@@ -8,8 +8,8 @@ $(document).ready(function () {
   var truckDesc = $("textarea#truckDesc");
   var licencePlateNum = $("input#license");
   var foodCategory = $("input#foodCategory");
-  var pictureUrlInput = $("input#pictureUrl");
-  var menuUrlInput = $("input#menuUrl");
+  var pictureURLInput = $("input#pictureURL");
+  var menuURLInput = $("input#menuURL");
   var facebookID = $("input#facebookID");
   var twitterHandle = $("input#twitterHandle");
   var instagramHandle = $("input#instagramHandle");
@@ -25,8 +25,8 @@ $(document).ready(function () {
       desc: truckDesc.val().trim(),
       foodCategory: foodCategory.val().trim(),
       licensePlate: licencePlateNum.val().trim(),
-      pictureUrl: pictureUrlInput.val().trim(),
-      menuUrl: menuUrlInput.val().trim(),
+      pictureURL: pictureURLInput.val().trim(),
+      menuURL: menuURLInput.val().trim(),
       facebookID: facebookID.val().trim(),
       twitterHandle: twitterHandle.val().trim(),
       instagramHandle: instagramHandle.val().trim()
@@ -43,8 +43,8 @@ $(document).ready(function () {
       truckData.desc,
       truckData.foodCategory,
       truckData.licensePlate,
-      truckData.pictureUrl,
-      truckData.menuUrl,
+      truckData.pictureURL,
+      truckData.menuURL,
       truckData.facebookID,
       truckData.twitterHandle,
       truckData.instagramHandle
@@ -55,8 +55,8 @@ $(document).ready(function () {
     ownerNameInput.val("");
     truckNameInput.val("");
     licencePlateNum.val("");
-    pictureUrlInput.val("");
-    menuUrlInput.val("");
+    pictureURLInput.val("");
+    menuURLInput.val("");
     foodCategory.val("");
     facebookID.val("");
     twitterHandle.val("");
@@ -72,27 +72,27 @@ $(document).ready(function () {
     tDesc,
     tFoodCategory,
     tLicensePlate,
-    tPictureUrl,
-    tMenuUrl,
+    tpictureURL,
+    tmenuURL,
     tFacebookID,
     tTwitterHandle,
     tInstagramHandle
   ) {
     $.post("/truckSignup", {
-      truckName: tName,
       email: tEmail,
       password: tPassword,
       name: uName,
+      truckName: tName,
       desc: tDesc,
       category: tFoodCategory,
-      menuUrl: tMenuUrl,
-      pictureUrl: tPictureUrl,
       licensePlate: tLicensePlate,
-      facebook: tFacebookID,
+      pictureURL: tpictureURL,
+      menuURL: tmenuURL,
       twitter: tTwitterHandle,
-      instagram: tInstagramHandle
+      instagram: tInstagramHandle,
+      facebook: tFacebookID
     }, function () {
-      location.reload();
+      window.location.reload();
     }).catch(handleLoginErr);
   }
 
