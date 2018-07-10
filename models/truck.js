@@ -19,19 +19,19 @@ module.exports = function (sequelize, DataTypes) {
         },
         pictureURL: {
             type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                isUrl: true,
-                len: [1]
-            }
+            allowNull: true
+            // validate: {
+            //     isUrl: true,
+            //     len: [1]
+            // }
         },
         menuURL: {
             type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                isUrl: true,
-                len: [1]
-            }
+            allowNull: true
+            // validate: {
+            //     isUrl: true,
+            //     len: [1]
+            // }
         }
     });
 

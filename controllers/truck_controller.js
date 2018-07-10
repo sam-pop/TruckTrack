@@ -13,8 +13,8 @@ module.exports = function (app) {
             req.body.UserId = dbUser.id;
             db.Truck.create(req.body).then(function (dbTruck) {
                 req.body.TruckId = dbTruck.id;
-                db.SocialHandles.create(req.body).then(function (dbSocial) {
-                    db.Location.create(req.body).then(function (dbLocation) {
+                db.SocialHandles.create(req.body).then(function () {
+                    db.Location.create(req.body).then(function () {
                         res.redirect(307, '/login');
                     });
                 });

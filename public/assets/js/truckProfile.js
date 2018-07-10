@@ -3,6 +3,9 @@ var locDate = '';
 var lastLoc = {
     id: $('#truckID').data('id')
 };
+if (lastLoc.id == '') {
+    window.location.replace('/profile/truck');
+}
 $(function () {
     lastLocation(lastLoc);
     getGeoLocaion();
