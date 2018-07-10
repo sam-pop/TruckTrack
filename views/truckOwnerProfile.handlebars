@@ -5,17 +5,29 @@
         <div class="card mb-3">
             <div class="card-block">
                 <button id="locationBtn" class="btn btn-primary btn-block ">Click here to update your location</button>
-                <small class="text-muted" id="locUpdate"></small>
-
+                <div class="text-center">
+                    <small class="text-muted" id="locUpdate"></small>
+                </div>
+                <hr style="width: 50%;">
                 <h1 class="card-title text-center" style="color: #2193b0; text-shadow: 1px 1px 2px gray;">Welcome {{truck.truckName}}.</h1>
 
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content
-                    is a little bit longer.</p>
+                <p class="card-text" style="padding-left:5px;">
+                    <b>Truck Category: </b>{{truck.category}}.</p>
+                <p class="card-text" style="padding-left:5px;">
+                    <b>Truck Description: </b>{{truck.desc}}.</p>
+                <p class="card-text" style="padding-left:5px;">
+                    <b>Registered license-plate: </b>{{truck.licensePlate}}.</p>
+                <p class="card-text" style="padding-left:5px;">
+                    <b>Truck Menu: </b>
+                    <a href="{{truck.menuURL}}">View Menu!</a>
+                </p>
+                <img class="card-img-bottom" src="{{truck.pictureURL}}" alt="Food truck picture" style="opacity: 0.8;">
+            </div>
+            <div class="text-center">
                 <p class="card-text">
-                    <small class="text-muted">Last updated {{truck.updatedAt}}</small>
+                    <small class="text-muted">Profile last updated: {{truck.updatedAt}}</small>
                 </p>
             </div>
-            <img class="card-img-bottom" src="{{truck.pictureURL}}" alt="Food truck picture" style="opacity: 0.8;">
 
         </div>
 
