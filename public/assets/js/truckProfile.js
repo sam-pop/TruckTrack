@@ -1,10 +1,12 @@
+var locUpdated;
+
 $(function () {
     getGeoLocaion();
     $("#locationBtn").on("click", function (event) {
         if ($("#locationBtn").attr('class').indexOf('disabled') == -1) {
             $('#locationBtn').addClass('disabled');
             setTimeout(function () {
-                updateLocation(myLoc);
+                updateLocation(locUpdated);
                 $('#locationBtn').removeClass('disabled');
             }, 5000);
         }
@@ -22,7 +24,7 @@ function getGeoLocaion() {
 function myLocation(position) {
     var myLat = position.coords.latitude;
     var myLon = position.coords.longitude;
-    myLoc = {
+    locUpdated = {
         lat: myLat,
         lon: myLon
     };
