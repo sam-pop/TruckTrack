@@ -11,10 +11,10 @@
         "model": "Truck",
         "data": {
             "truckName": "The soup truck",
-            "desc": "The best artisans soups in town!",
+            "desc": "The best artisans soups in town! But only if you can order it right...",
             "category": "Soups, Bread",
             "licensePlate": "S0UPN4Z1",
-            "pictureURL": "https://fortcollinsfoodtrucks.com/wp-content/uploads/2015/01/austin-taco-food-truck-fort-collins1.jpg",
+            "pictureURL": "https://roaminghunger.com/img/trucks/original/5328f47e-cf20-4956-8a1d-062846204482.JPG",
             "UserId": 1
         }
     },
@@ -24,6 +24,96 @@
             "lat": 38.909032,
             "lon": -77.043390,
             "TruckId": 1
+        }
+    },
+
+    {
+        "model": "User",
+        "data": {
+            "name": "Carlos Manny",
+            "email": "carlos@gmail.com",
+            "password": "a1",
+            "isTruckOwner": true
+
+        }
+    }, {
+        "model": "Truck",
+        "data": {
+            "truckName": "Far East Taco Grille",
+            "desc": "Whether you have a quick lunch-break downtown between meetings, or you’re a tourist looking for street food, Far East Taco Grille is quintessentially American in that street food ethnic fusion sense. The flavors are insatiable. Though you might not think bahn mi or kimchi belong in the flavor profile of tacos, the sweet and spicy mix amazingly.",
+            "category": " Asian Fusion, Mexican",
+            "licensePlate": "TACO998",
+            "pictureURL": "https://s3-media1.fl.yelpcdn.com/bphoto/mDQZqQcQopk4yFBApfNT2A/o.jpg",
+            "menuURL": "https://s3-media4.fl.yelpcdn.com/bphoto/4xPhtl81ainvrK3iOBlIOw/o.jpg",
+            "UserId": 2
+        }
+    },
+    {
+        "model": "Location",
+        "data": {
+            "lat": 38.901748,
+            "lon": -77.031927,
+            "TruckId": 2
+        }
+    },
+
+    {
+        "model": "User",
+        "data": {
+            "name": "Ahmed Ahmed",
+            "email": "ahmed@gmail.com",
+            "password": "a1",
+            "isTruckOwner": true
+
+        }
+    }, {
+        "model": "Truck",
+        "data": {
+            "truckName": "Halal Grill ",
+            "desc": "Halal & Mediterranean food for the messes! chicken, beef, gyro and more!",
+            "category": "Halal, Mediterranean",
+            "licensePlate": "H4L4L2",
+            "pictureURL": "https://s3-media2.fl.yelpcdn.com/bphoto/bklq9t48A1vQv1dDtHjkgw/o.jpg",
+            "menuURL": "https://s3-media1.fl.yelpcdn.com/bphoto/3yEAF-wX9K99JXX0N-eLJg/o.jpg",
+            "UserId": 3
+        }
+    },
+    {
+        "model": "Location",
+        "data": {
+            "lat": 38.901882,
+            "lon": -77.029609,
+            "TruckId": 3
+        }
+    },
+
+    {
+        "model": "User",
+        "data": {
+            "name": "Jon Long",
+            "email": "jon@gmail.com",
+            "password": "a1",
+            "isTruckOwner": true
+
+        }
+    }, {
+        "model": "Truck",
+        "data": {
+            "truckName": "Pho Junkies",
+            "desc": "Vietnamese food with a twist! come visit us today for the best Pho-od you ever had...",
+            "category": "Vietnamese",
+            "licensePlate": "M3LUVU",
+            "pictureURL": "https://s3-media1.fl.yelpcdn.com/bphoto/lEkOaV63D_44BQX0dApvVw/o.jpg",
+            "menuURL": "https://s3-media1.fl.yelpcdn.com/bphoto/OiCmNkmh-h3S9bzk8C2HrA/o.jpg",
+            "UserId": 4
+        }
+    },
+    {
+        "model": "Location",
+        "data": {
+            "lat": 38.899477,
+            "lon": -77.035185,
+            "TruckId": 4
         }
     }
 ]

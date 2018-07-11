@@ -38,7 +38,7 @@ var truckCustomMaker = L.icon({
   iconUrl: "./assets/img/marker.png",
   iconSize: [34, 44],
   iconAnchor: [20, 36],
-  popupAnchor: [-3, -76],
+  popupAnchor: [-4, -36],
   shadowUrl: "",
   shadowSize: [68, 95],
   shadowAnchor: [22, 94]
@@ -65,15 +65,16 @@ $(function() {
   mymap.setView(baseCoords, 15);
 
   // Display truck markers on map
-  $.get("/api/trucks").then(function(data) {
-    console.log(data);
-
+  $.get("/api/trucks").then(function (data) {
     for (var i of data) {
+      //addes truck markers to map
       var latlon = [i.Location.lat, i.Location.lon];
       var truckMarker = L.marker(latlon, {
         icon: truckCustomMaker
       });
-      truckMarker.bindPopup(i.truckName);
+      // var popup = "<div class='text-center'><span style=\"font-size:1.2em;color:#2c73d2;\"><b>" + i.truckName + "</b></span><hr><a href=\"/profile/truck/" + i.id + "\"><img width=\"100%\" src=\"" + i.pictureURL + "\"></a><hr><i>" + i.category + "</i></div>";
+      var popup = "<div class='text-center'><span style=\"font-size:1.2em;color:#2c73d2;\"><b>" + i.truckName + "</b></span><i>&nbsp;\/\/&nbsp;" + i.category + "</i><hr><a href=\"/profile/truck/" + i.id + "\"><img width=\"100%\" src=\"" + i.pictureURL + "\"></a></div>";
+      truckMarker.bindPopup(popup);
       truckMarker.addTo(mymap);
       //addes truck to the truck list
       if (i.truckName) {
