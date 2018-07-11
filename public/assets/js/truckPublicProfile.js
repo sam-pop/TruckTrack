@@ -4,12 +4,17 @@ var lastLoc = {
   id: $("#truckID").data("id")
 };
 
-$(function() {
+$(function () {
   lastLocation(lastLoc);
+
+  $('#backArrow').on('click', function (e) {
+    $('#mainDiv').addClass('animated zoomOut');
+    window.location.replace('/');
+  });
 });
 
 function lastLocation(truckId, cb) {
-  $.post("/profile/truck/lastLocation", truckId, function(data) {
+  $.post("/profile/truck/lastLocation", truckId, function (data) {
     locDate = data.updatedAt;
     cb(textUpdate());
   });

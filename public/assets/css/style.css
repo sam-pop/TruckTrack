@@ -102,3 +102,8 @@ footer {
 .center {
     margin: 0 auto;
 }
+
+#backArrow
+{
+    cursor: pointer;
+}
