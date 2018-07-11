@@ -117,7 +117,8 @@ function truckSearch() {
   $.get("/api/trucks").then(function (data) {
     for (var i of data) {
       var tName = i.truckName.toLowerCase();
-      if (tName.indexOf(search) !== -1 && search !== '') {
+      var tCat = i.category.toLowerCase();
+      if (((tName.indexOf(search) !== -1) || (tCat.indexOf(search) !== -1)) && search !== '') {
         window.location.replace('/profile/truck/' + i.id);
       } else {
         $('#searchBox').val('');
