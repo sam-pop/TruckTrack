@@ -2,7 +2,7 @@
 <br>
 <div class="row justify-content-center">
     <div class="col-sm col-md-8 col-xl-6 align-self-center">
-        <div class="card mb-3 shadow bg-white rounded">
+        <div class="card mb-3 shadow bg-white rounded text-center">
             <div class="card-block">
                 <div class="text-center">
                     <small class="text-muted" id="locUpdate"></small>
@@ -13,17 +13,28 @@
                 </h1>
 
                 <p class="card-text" style="padding-left:5px;">
-                    <b>Truck Category: </b>{{truck.category}}.</p>
+                    <b>
+                        <u>Truck Category: </u>
+                    </b>
+                    <br>{{truck.category}}.</p>
                 <p class="card-text" style="padding-left:5px;">
-                    <b>Truck Description: </b>{{truck.desc}}.</p>
+                    <b>
+                        <u>Truck Description: </u>
+                    </b>
+                    <br>{{truck.desc}}.</p>
                 {{#if truck.menuURL}}
                 <p class="card-text" style="padding-left:5px;">
-                    <b>Truck Menu: </b>
+                    <b>
+                        <u>Truck Menu: </u>
+                    </b>
+                    <br>
                     <a href="{{truck.menuURL}}">View Menu!</a>
                 </p>
                 {{else}}
                 <p class="card-text" style="padding-left:5px;">
-                    <b>Truck Menu: </b>
+                    <b>
+                        <u>Truck Menu: </u>
+                    </b>
                     <i> Menu not available.</i>
                 </p>
                 {{/if}}

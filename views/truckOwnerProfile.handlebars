@@ -2,7 +2,7 @@
 <br>
 <div class="row justify-content-center">
     <div class="col-sm col-md-8 align-self-center">
-        <div class="card mb-3 shadow bg-white rounded">
+        <div class="card mb-3 shadow bg-white rounded text-center">
             <div class="card-block">
                 <button id="locationBtn" class="btn btn-primary btn-block shadow-sm">Click here to update your location</button>
                 <div class="text-center">
@@ -12,25 +12,39 @@
                 <h1 class="card-title text-center" style="color: #0480cf; text-shadow: 1px 1px 2px rgb(167, 167, 167);">Welcome {{truck.truckName}}.</h1>
 
                 <p class="card-text" style="padding-left:5px;">
-                    <b>Truck Category: </b>{{truck.category}}.</p>
+                    <b>
+                        <u>Truck Category: </u>
+                    </b>
+                    <br>{{truck.category}}.</p>
                 <p class="card-text" style="padding-left:5px;">
-                    <b>Truck Description: </b>{{truck.desc}}.</p>
+                    <b>
+                        <u>Truck Description: </u>
+                    </b>
+                    <br>{{truck.desc}}.</p>
                 <p class="card-text" style="padding-left:5px;">
-                    <b>Registered license-plate: </b>{{truck.licensePlate}}.</p>
+                    <b>
+                        <u>Registered license-plate: </u>
+                    </b>
+                    <br>{{truck.licensePlate}}.</p>
                 {{#if truck.menuURL}}
                 <p class="card-text" style="padding-left:5px;">
-                    <b>Truck Menu: </b>
+                    <b>
+                        <u>Truck Menu: </u>
+                    </b>
                     <a href="{{truck.menuURL}}">View Menu!</a>
                 </p>
                 {{else}}
                 <p class="card-text" style="padding-left:5px;">
-                    <b>Truck Menu: </b>
+                    <b>
+                        <u>Truck Menu: </u>
+                    </b>
                     <i>Please add a menu link!</i>
                 </p>
                 {{/if}}
                 <div class="text-center">
+                    <br>
                     <p class="card-text" style="padding-left:5px;">
-                        <a href="/truckProfileUpdate">Update your account</a>
+                        <a href="/truckProfileUpdate" class="btn custom-btn rounded">Update account details</a>
                     </p>
                 </div>
                 <br>
