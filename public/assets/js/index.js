@@ -63,15 +63,14 @@ $(function () {
 
   // Display truck markers on map
   $.get("/api/trucks").then(function (data) {
-    console.log(data);
-
     for (var i of data) {
       //addes truck markers to map
       var latlon = [i.Location.lat, i.Location.lon];
       var truckMarker = L.marker(latlon, {
         icon: truckCustomMaker
       });
-      var popup = "<div class='text-center'><span style=\"font-size:1.2em;color:#2c73d2;\"><b>" + i.truckName + "</b></span><hr><a href=\"/profile/truck/" + i.id + "\"><img width=\"100%\" src=\"" + i.pictureURL + "\"></a><hr><i>" + i.category + "</i></div>";
+      // var popup = "<div class='text-center'><span style=\"font-size:1.2em;color:#2c73d2;\"><b>" + i.truckName + "</b></span><hr><a href=\"/profile/truck/" + i.id + "\"><img width=\"100%\" src=\"" + i.pictureURL + "\"></a><hr><i>" + i.category + "</i></div>";
+      var popup = "<div class='text-center'><span style=\"font-size:1.2em;color:#2c73d2;\"><b>" + i.truckName + "</b></span><i>&nbsp;\/\/&nbsp;" + i.category + "</i><hr><a href=\"/profile/truck/" + i.id + "\"><img width=\"100%\" src=\"" + i.pictureURL + "\"></a></div>";
       truckMarker.bindPopup(popup);
       truckMarker.addTo(mymap);
       //addes truck to the truck list
