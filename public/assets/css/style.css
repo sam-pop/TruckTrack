@@ -46,7 +46,7 @@ footer {
 }
 
 h1.title {
-    margin: 2.5rem 0 3rem 0;
+    margin: 2.5rem 0 1rem 0;
 }
 
 .navbar-custom .navbar-nav>li>a:hover,
@@ -97,4 +97,8 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: #f5f5f5;
+}
+
+.center {
+    margin: 0 auto;
 }

@@ -2,15 +2,12 @@ var baseCoords = [38.897663, -77.036574];
 var mymap = L.map("mapid").setView(baseCoords, 16);
 
 L.tileLayer(
-  "https://api.tiles.mapbox.com/v4/mapbox.emerald/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic2FtLXBvcCIsImEiOiJjamhucjhhNXgwNTE0MzZwYWQxenprNG5kIn0.9c-GiLb45NYrZeAiy3TZ6w",
-  {
-    attribution:
-      'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  "https://api.tiles.mapbox.com/v4/mapbox.emerald/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic2FtLXBvcCIsImEiOiJjamhucjhhNXgwNTE0MzZwYWQxenprNG5kIn0.9c-GiLb45NYrZeAiy3TZ6w", {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     minZoom: 13,
     id: "mapbox.emerald",
-    accessToken:
-      "pk.eyJ1Ijoic2FtLXBvcCIsImEiOiJjamhucjhhNXgwNTE0MzZwYWQxenprNG5kIn0.9c-GiLb45NYrZeAiy3TZ6w"
+    accessToken: "pk.eyJ1Ijoic2FtLXBvcCIsImEiOiJjamhucjhhNXgwNTE0MzZwYWQxenprNG5kIn0.9c-GiLb45NYrZeAiy3TZ6w"
   }
 ).addTo(mymap);
 
@@ -61,7 +58,7 @@ function onLocationError(e) {
 // mymap.on("locationfound", onLocationFound);
 mymap.on("locationerror", onLocationError);
 
-$(function() {
+$(function () {
   mymap.setView(baseCoords, 15);
 
   // Display truck markers on map
@@ -101,5 +98,19 @@ $(function() {
         $("#truckList").append(main);
       }
     }
+  });
+
+  $('#searchBtn').on('click', function (e) {
+    var search = $('#searchBox').val().trim();
+    $.get("/api/trucks").then(function (data) {
+      for (var i of data) {
+        var tName = i.truckName.toLowerCase();
+        if (tName.indexOf(search) !== -1 && search !== '') {
+          window.location.replace('/profile/truck/' + i.id);
+        } else {
+          $('#searchBox').val('');
+        }
+      }
+    });
   });
 });

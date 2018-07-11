@@ -4,23 +4,35 @@
         <small style="font-size:0.6em;color:rgb(95, 93, 93)">Live locations</small>
     </h1>
 
+    <br>
     <!-- Portfolio Item Row -->
     <div class="row">
         <div class="col shadow p-3 mb-5 bg-white rounded">
             {{> map}}
         </div>
     </div>
+    <div class="row text-center">
+        <div class="offset-lg-1 col-9 form-group text-center">
+            {{!-- SEARCH BOX --}}
+            <input id="searchBox" class="input rounded form-control form-control-sm mb-2" type="text" placeholder="Looking for anything in particular?"
+                size="50" title="Go wild!">
+            <!-- SEARCH BUTTON -->
+        </div>
+        <div class="form-group" id="searchBtn">
+            <button class="btn btn-sm custom-btn rounded">Search!</button>
+        </div>
+    </div>
     <br> {{!-- available trucks list --}}
     <h4>
         <span>
-            <i class="material-icons">
+            <i class="material-icons ">
                 local_shipping
             </i>
         </span>
         <span>Available Food Trucks:</span>
     </h4>
     <hr>
-    <div class="row" id="truckList">
+    <div class="row " id="truckList">
 
     </div>
     <!-- /.row -->
