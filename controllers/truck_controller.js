@@ -36,7 +36,7 @@ module.exports = function (app) {
         });
     });
 
-    // returns the truck's public profile page 
+    // returns the truck's public profile page
     app.get('/profile/truck/:id', function (req, res) {
         db.Truck.findOne({
             where: {
@@ -50,7 +50,7 @@ module.exports = function (app) {
         });
     });
 
-    // returns the truck's profile page 
+    // returns the truck's profile page
     app.get('/profile/truck/', isAuth_Destroy.isAuthenticated, function (req, res) {
         db.Truck.findOne({
             where: {
@@ -98,5 +98,35 @@ module.exports = function (app) {
 
 
     //TODO: (PUT) truck profile details / settings
+
+  app.get('/api/truck/', isAuth_Destroy.isAuthenticated, function (req, res) {
+    db.Truck.findOne({
+      where: {
+        UserId: req.user.id
+      }
+    }).then(function (dbTruck) {
+      var truckObj = {
+        truck: dbTruck
+      };
+      res.json(truckObj);
+    });
+  });
+
+  app.put('/truckProfileUpdate', function (req, res) {
+    db.Truck.update({
+      truckName: req.body.truckName,
+      desc: req.body.desc,
+      category: req.body.category,
+      licensePlate: req.body.licensePlate,
+      pictureURL:req.body.pictureURL,
+      // menuURL:req.body.menuURL,
+
+    }, {
+      where: {
+        id: req.user.id
+      }
+    });
+  });
+
 
 };

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var userUpdateForm = $("form.userUpdate")
+  var userUpdateForm = $("form.userUpdate");
   var nameInput = $("input#inputName");
   var emailInput = $("input#inputEmail");
 
@@ -24,7 +24,7 @@ $(document).ready(function() {
   function getUserData() {
     $(document).ready(function() {
       $.get("/api/user_data").then(function(data) {
-        console.log('data from api', data);
+        console.log("data from api", data);
         nameInput.val(data.name);
         emailInput.val(data.email);
       });
@@ -36,8 +36,6 @@ $(document).ready(function() {
       method: "PUT",
       url: "/userProfileUpdate",
       data: userData
-    })
+    });
   }
-})
-
-
+});

@@ -1,10 +1,10 @@
-$(document).ready(function () {
+$(document).ready(function() {
   $("input#inputEmail").focus();
   var signUpForm = $("form.login");
   var emailInput = $("input#inputEmail");
   var passwordInput = $("input#inputPassword");
 
-  signUpForm.on("submit", function (event) {
+  signUpForm.on("submit", function(event) {
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
@@ -22,11 +22,12 @@ $(document).ready(function () {
 
   function loginUser(uEmail, uPassword) {
     $.post(
-      "/login", {
+      "/login",
+      {
         email: uEmail,
         password: uPassword
       },
-      function () {
+      function() {
         location.reload();
       }
     ).catch(handleLoginErr);
