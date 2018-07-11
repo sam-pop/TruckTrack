@@ -51,6 +51,7 @@ module.exports = function (app) {
         }
     });
 
+    // update user profile
     app.put('/userProfileUpdate', function (req, res) {
         db.User.update({
             name: req.body.name,
@@ -62,22 +63,15 @@ module.exports = function (app) {
         });
     });
 
-  app.get("/api/user_data", function(req, res) {
-    if (!req.user) {
-      res.json({});
-    }
-    else {
-      res.json({
-        email: req.user.email,
-        id: req.user.id,
-        name: req.user.name
-      });
-    }
-  });
-
-    //TODO: (PUT) user profile details / settings
-
-    //TODO: (GET) check if user isAuthenticated (already logged in)
-
-
+    app.get("/api/user_data", function (req, res) {
+        if (!req.user) {
+            res.json({});
+        } else {
+            res.json({
+                email: req.user.email,
+                id: req.user.id,
+                name: req.user.name
+            });
+        }
+    });
 };
