@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var truckUpdateForm = $("form.truckUpdate");
   var ownerNameInput = $("input#ownerName");
   var truckNameInput = $("input#truckName");
@@ -15,7 +15,7 @@ $(document).ready(function() {
 
   getTruckUserData();
   getTruckData();
-  truckUpdateForm.on("submit", function(event) {
+  truckUpdateForm.on("submit", function (event) {
     event.preventDefault();
     var truckUserData = {
       name: ownerNameInput.val().trim(),
@@ -40,14 +40,13 @@ $(document).ready(function() {
   });
 
   function getTruckData() {
-    $.get("/api/truck").then(function(data) {
-      console.log("data from api truck data:", data.truck.truckName);
+    $.get("/api/truck").then(function (data) {
       truckDesc.val(data.truck.desc);
       truckNameInput.val(data.truck.truckName);
       licencePlateNum.val(data.truck.licensePlate);
       pictureURLInput.val(data.truck.pictureURL);
       foodCategory.val(data.truck.category);
-      if(data.truck.menuURL) {
+      if (data.truck.menuURL) {
         menuURLInput.val(data.truck.menuURL);
       } else {
         menuURLInput.val("");
@@ -65,7 +64,7 @@ $(document).ready(function() {
   }
 
   function getTruckUserData() {
-    $.get("/api/user_data").then(function(data) {
+    $.get("/api/user_data").then(function (data) {
       console.log("data from api", data);
       ownerNameInput.val(data.name);
       emailInput.val(data.email);
