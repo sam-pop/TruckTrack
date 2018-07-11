@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   var signUpForm = $("form.truckSignup");
   var ownerNameInput = $("input#ownerName");
   var truckNameInput = $("input#truckName");
@@ -14,7 +14,7 @@ $(document).ready(function () {
   var twitterHandle = $("input#twitterHandle");
   var instagramHandle = $("input#instagramHandle");
 
-  signUpForm.on("submit", function (event) {
+  signUpForm.on("submit", function(event) {
     event.preventDefault();
 
     var truckData = {
@@ -78,22 +78,26 @@ $(document).ready(function () {
     tTwitterHandle,
     tInstagramHandle
   ) {
-    $.post("/truckSignup", {
-      email: tEmail,
-      password: tPassword,
-      name: uName,
-      truckName: tName,
-      desc: tDesc,
-      category: tFoodCategory,
-      licensePlate: tLicensePlate,
-      pictureURL: tpictureURL,
-      menuURL: tmenuURL,
-      twitter: tTwitterHandle,
-      instagram: tInstagramHandle,
-      facebook: tFacebookID
-    }, function () {
-      window.location.reload();
-    }).catch(handleLoginErr);
+    $.post(
+      "/truckSignup",
+      {
+        email: tEmail,
+        password: tPassword,
+        name: uName,
+        truckName: tName,
+        desc: tDesc,
+        category: tFoodCategory,
+        licensePlate: tLicensePlate,
+        pictureURL: tpictureURL,
+        menuURL: tmenuURL,
+        twitter: tTwitterHandle,
+        instagram: tInstagramHandle,
+        facebook: tFacebookID
+      },
+      function() {
+        window.location.reload();
+      }
+    ).catch(handleLoginErr);
   }
 
   function handleLoginErr() {
