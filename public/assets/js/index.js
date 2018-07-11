@@ -101,16 +101,27 @@ $(function () {
   });
 
   $('#searchBtn').on('click', function (e) {
-    var search = $('#searchBox').val().trim();
-    $.get("/api/trucks").then(function (data) {
-      for (var i of data) {
-        var tName = i.truckName.toLowerCase();
-        if (tName.indexOf(search) !== -1 && search !== '') {
-          window.location.replace('/profile/truck/' + i.id);
-        } else {
-          $('#searchBox').val('');
-        }
-      }
-    });
+    truckSearch();
   });
 });
+
+function submitListener(event) {
+  var key = event.keyCode;
+  if (key == 13) {
+    truckSearch();
+  }
+}
+
+function truckSearch() {
+  var search = $('#searchBox').val().trim();
+  $.get("/api/trucks").then(function (data) {
+    for (var i of data) {
+      var tName = i.truckName.toLowerCase();
+      if (tName.indexOf(search) !== -1 && search !== '') {
+        window.location.replace('/profile/truck/' + i.id);
+      } else {
+        $('#searchBox').val('');
+      }
+    }
+  });
+}
