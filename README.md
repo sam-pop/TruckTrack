@@ -25,9 +25,12 @@ Based on their current location customers can browse the food trucks around them
 ## <a name="how"></a>How to use
 ---
 
-You can use this web app AS-IS by running it from the following link: https://secure-hollows-74922.herokuapp.com/
+_You can use this web app AS-IS by running it from the following link: https://secure-hollows-74922.herokuapp.com/_
 
-You will have to set-up a local instance of mySQL server, look at `config/config.json` for the development settings.
+First, clone this repo by running the command:
+`git clone https://github.com/sam-pop/TruckTrack.git`.
+
+You will also have to set-up a local instance of mySQL server, look at `config/config.json` for the development settings.
 
 From the command line run `npm install` to install all required dependencies from the `package.json` file.
 
