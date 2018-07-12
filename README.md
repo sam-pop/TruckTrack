@@ -1,69 +1,78 @@
 # TruckTrack
 
-TruckTrack helps connect food truck owners and their customers.
+## Table of Contents
+---
 
-TruckTrack is a free app created for avid food truck junkies and for food truck bussinesses. This free app lets customers track their favorite food trucks that are currently serving around the DC Metro Area, based off of their location. Customers and owners an sign-up and create their free profile on the app to get full access to all of the great features of TruckTrack.
+* [Project description](#desc)
+* [How to use](#how)
+* [What we used](#tech)
+* [Team members](#team-members)
+* [Demo](#demo)
 
-Customers can track their favorite food trucks by clicking on the map on the home page. Customers create their own profile by simply entering their name and email. They can then select their favorite food trucks on their profile, then when they go to the map they can see their favorite trucks based off of their location.
+## <a name="dec"></a>Project description
+---
 
-Truck owners simply enter a few key data peices, which will be displayed on their bussiness profile, such as the type of food they're serving, their menu, as well as their social media information. TruckTrack simplifies food truck owner's lives by letting them know the location of the hottest spots in DC to go to, based off of customer information.
+>_TruckTrack is a fully responsive, MySQL/Sequelize/Node.js/Express/Passport MVC web app that was built in a few days as a full-stack coding project._
 
-## Persona
+**TruckTrack helps connect food truck owners and their customers.**
 
-**Food truck:**
+TruckTrack is a free app created for food truck lovers and for food truck business owners. This free app lets customers track the food trucks they love around the DC Metro Area.
 
-Yev Kassem is a food truck owner that is looking for a way to let his customers know where he is going to be operating from today. He also wants to attract new relevant customers to his business (based on their location and personal preferences).
+Based on their current location customers can browse the food trucks around them. Food-truck owners can share their current location with their customers and potential customers while having a detailed business profile page to showcase their food-truck.
 
-**Customer:**
+ > _Check out the repo  **Wiki** section for detailed user-stories and database diagrams_
 
-Elaine is a working professional who finds food trucks to be an easy, fast and accessible way to purchase food on her lunch break from work.
+## <a name="how"></a>How to use
+---
 
-## User Story
+You can use this web app AS-IS by running it from the following link: https://secure-hollows-74922.herokuapp.com/
 
-**Food truck:**
+You will have to set-up a local instance of mySQL server, look at `config/config.json` for the development settings.
 
-* As a food truck owner I want a mobile web app that allows me to share my location on a map with potential customers.
-* As a food truck owner I want to be able to have a business profile with a picture (to make it easier for my customers to find me), food description and menu.
-* As a food truck owner I want to reach as many people as I can who might be interested in my products.
+From the command line run `npm install` to install all required dependencies from the `package.json` file.
 
-**Customer:**
+Make sure you are connected to your local mySQL server and from the command line run `node server.js` to start the server at `localhost:8080` (you can change the port in the `server.js` file that's located in the root directory).
 
-* As a food truck customer I want an easy and convenient way to locate my favorite food trucks and find where are they stationed today.
-* As a food truck customer I want to know what food trucks are located close to my current location so I am aware of my lunch options.
-* As a food truck customer I want to be able to see the menus of the food trucks in my area so I can decide where to go prior to my lunch break.
+## <a name="tech"></a>What we used
 
+**Back-end:**
 
-##Dependencies
+* [Node.JS](https://www.npmjs.com/)
+* [Body-parser (body parsing middleware)](https://www.npmjs.com/package/express-handlebars)
+* [Express](https://www.npmjs.com/package/express)
+* [Express-session  (session middleware)](https://www.npmjs.com/package/express-session)
+* [MySQL2](https://www.npmjs.com/package/mysql2)
+* [Sequelize](http://docs.sequelizejs.com/)
+* [Sequelize-fixtures](https://www.npmjs.com/package/sequelize-fixtures)
+* [Passport](https://www.npmjs.com/package/passport)
+* [Passport-local (authentication strategy)](https://www.npmjs.com/package/passport-local)
+* [bcrypt-nodejs (password hashing)](https://www.npmjs.com/package/bcrypt-nodejs)
+* [Validator (string validation)](https://www.npmjs.com/package/validator)
+* [Handlebars](https://www.npmjs.com/package/express-handlebars)
 
-MySQL
-Sequelize
-Node.js
-Passport
-Handlebars
-Request
-Express
+**Font-end:**
 
-##Technologies
+* HTML5
+* CSS
+* [Bootstrap (v4.1)](https://getbootstrap.com/)
+* Javascript
+* jQuery
+* [Leaflet (JS interactive mapping library)](https://leafletjs.com/)
+* [Animate.css (animations)](https://github.com/daneden/animate.css)
+* [Material-Design Icons](https://material.io/)
 
+## <a name="team-members"></a>Team members
+---
 
-jQuery
-Javascript
-HTML
-Node.js
-CSS
-leaflet
-moment.js
-animate.js
-jqueryui
+* [Katherine Stout](https://github.com/katherinestout)
+* [Samuel Poplovitch](https://github.com/sam-pop/)
+* [Stanley Louis](https://github.com/stanlouis)
 
-This application uses user authentication, as well as uses the MVC folder structure.
+## <a name="demo"></a> Demo
+---
 
+https://secure-hollows-74922.herokuapp.com/
 
+[![Screenshot](https://s22.postimg.cc/sxohlznep/Screenshot_2018-07-12-_Truck_Track.jpg)](https://secure-hollows-74922.herokuapp.com/)
 
-
-##Authors
-
-Sam, Stanley, and Katie.
-
-##Links
-Heroku
+[![Truck owner profile page](https://s22.postimg.cc/932fzx5n5/Screenshot_2018-07-12-_Truck_Track_1.jpg)](https://secure-hollows-74922.herokuapp.com/)
