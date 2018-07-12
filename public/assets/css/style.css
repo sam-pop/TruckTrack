@@ -108,7 +108,7 @@ footer {
 }
 
 @media screen and (max-width: 667px) {
-    #truckList {
+    #truckListDiv {
         display: none;
     }
 }
