@@ -75,4 +75,8 @@ https://secure-hollows-74922.herokuapp.com/
 
 [![Screenshot](https://s22.postimg.cc/sxohlznep/Screenshot_2018-07-12-_Truck_Track.jpg)](https://secure-hollows-74922.herokuapp.com/)
 
+---
+
+#### Truck owner profile page:
+
 [![Truck owner profile page](https://s22.postimg.cc/932fzx5n5/Screenshot_2018-07-12-_Truck_Track_1.jpg)](https://secure-hollows-74922.herokuapp.com/)
