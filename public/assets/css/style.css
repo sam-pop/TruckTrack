@@ -103,7 +103,12 @@ footer {
     margin: 0 auto;
 }
 
-#backArrow
-{
+#backArrow {
     cursor: pointer;
+}
+
+@media screen and (max-width: 667px) {
+    #truckList {
+        display: none;
+    }
 }
