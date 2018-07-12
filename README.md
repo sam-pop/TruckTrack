@@ -14,7 +14,7 @@
 
 >_TruckTrack is a fully responsive, MySQL/Sequelize/Node.js/Express/Passport MVC web app that was built in a few days as a full-stack coding project._
 
-**TruckTrack helps connect food truck owners and their customers.**
+**TruckTrack helps connect food truck owners with their customers.**
 
 TruckTrack is a free app created for food truck lovers and for food truck business owners. This free app lets customers track the food trucks they love around the DC Metro Area.
 
