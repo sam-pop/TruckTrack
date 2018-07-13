@@ -10,7 +10,7 @@
     }, {
         "model": "Truck",
         "data": {
-            "truckName": "The soup truck",
+            "truckName": "The Soup Truck",
             "desc": "The best artisans soups in town! But only if you can order it right...",
             "category": "Soups, Bread",
             "licensePlate": "S0UPN4Z1",
@@ -39,7 +39,7 @@
     }, {
         "model": "Truck",
         "data": {
-            "truckName": "Far East Taco Grille",
+            "truckName": "Far East Taco Fusion",
             "desc": "Whether you have a quick lunch-break downtown between meetings, or you’re a tourist looking for street food, Far East Taco Grille is quintessentially American in that street food ethnic fusion sense. The flavors are insatiable. Though you might not think bahn mi or kimchi belong in the flavor profile of tacos, the sweet and spicy mix amazingly.",
             "category": " Asian Fusion, Mexican",
             "licensePlate": "TACO998",
@@ -69,7 +69,7 @@
     }, {
         "model": "Truck",
         "data": {
-            "truckName": "Halal Grill ",
+            "truckName": "Halal Grill DC",
             "desc": "Halal & Mediterranean food for the messes! chicken, beef, gyro and more!",
             "category": "Halal, Mediterranean",
             "licensePlate": "H4L4L2",
@@ -99,7 +99,7 @@
     }, {
         "model": "Truck",
         "data": {
-            "truckName": "Pho Junkies",
+            "truckName": "Pho-od Junkies",
             "desc": "Vietnamese food with a twist! come visit us today for the best Pho-od you ever had...",
             "category": "Vietnamese",
             "licensePlate": "M3LUVU",
