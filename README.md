@@ -20,7 +20,7 @@ TruckTrack is a free app created for food truck lovers and for food truck busine
 
 Based on their current location customers can browse the food trucks around them. Food-truck owners can share their current location with their customers and potential customers while having a detailed business profile page to showcase their food-truck.
 
- > _Check out the repo  **Wiki** section for detailed user-stories, database diagrams & file structure._
+ > _Check out the repo  [**Wiki**](https://github.com/sam-pop/TruckTrack/wiki) section for detailed user-stories, database diagrams & file structure._
 
 ## <a name="how"></a>How to use
 ---
