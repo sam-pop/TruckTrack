@@ -71,8 +71,8 @@ Make sure you are connected to your local mySQL server and from the command line
 
 ---
 
-- [Katherine Stout](https://github.com/katherinestout)
 - [Samuel Poplovitch](https://github.com/sam-pop/)
+- [Katherine Stout](https://github.com/katherinestout)
 - [Stanley Louis](https://github.com/stanlouis)
 
 ## <a name="demo"></a> Demo
