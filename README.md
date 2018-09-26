@@ -94,3 +94,13 @@ https://truck-track.herokuapp.com/
 #### Truck owner profile page:
 
 [![Truck owner profile page](https://s22.postimg.cc/932fzx5n5/Screenshot_2018-07-12-_Truck_Track_1.jpg)](https://truck-track.herokuapp.com/)
+
+---
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :)
