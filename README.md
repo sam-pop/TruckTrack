@@ -2,8 +2,6 @@
 
 ## Table of Contents
 
----
-
 - [Project description](#desc)
 - [How to use](#how)
 - [What we used](#tech)
@@ -11,8 +9,6 @@
 - [Demo](#demo)
 
 ## <a name="dec"></a>Project description
-
----
 
 > _TruckTrack is a fully responsive, MySQL/Sequelize/Node.js/Express/Passport MVC web app that was built in a few days as a full-stack coding project._
 
@@ -25,8 +21,6 @@ Based on their current location customers can browse the food trucks around them
 > _Check out the repo [**Wiki**](https://github.com/sam-pop/TruckTrack/wiki) section for detailed user-stories, database diagrams & file structure._
 
 ## <a name="how"></a>How to use
-
----
 
 _You can use this web app AS-IS by running it from the following link: https://truck-track.herokuapp.com/_
 
@@ -69,33 +63,23 @@ Make sure you are connected to your local mySQL server and from the command line
 
 ## <a name="team-members"></a>Team members
 
----
-
 - [Katherine Stout](https://github.com/katherinestout)
 - [Samuel Poplovitch](https://github.com/sam-pop/)
 - [Stanley Louis](https://github.com/stanlouis)
 
 ## <a name="demo"></a> Demo
 
----
-
 https://truck-track.herokuapp.com/
 
 [![Screenshot](https://s22.postimg.cc/sxohlznep/Screenshot_2018-07-12-_Truck_Track.jpg)](https://truck-track.herokuapp.com/)
-
----
 
 #### Mobile:
 
 [![Mobile Screenshot](https://s22.postimg.cc/qkpugfslt/image.jpg)](https://truck-track.herokuapp.com/)
 
----
-
 #### Truck owner profile page:
 
 [![Truck owner profile page](https://s22.postimg.cc/932fzx5n5/Screenshot_2018-07-12-_Truck_Track_1.jpg)](https://truck-track.herokuapp.com/)
-
----
 
 ## Contributing
 
