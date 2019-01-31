@@ -63,9 +63,9 @@ Make sure you are connected to your local mySQL server and from the command line
 
 ## <a name="team-members"></a>Team members
 
-- [Katherine Stout](https://github.com/katherinestout)
-- [Samuel Poplovitch](https://github.com/sam-pop/)
-- [Stanley Louis](https://github.com/stanlouis)
+- [Samuel Poplovitch](https://github.com/sam-pop/) (Lead Developer, Front-end & Back-end)
+- [Stanley Louis](https://github.com/stanlouis) (Back-end)
+- [Katherine Stout](https://github.com/katherinestout) (Front-end)
 
 ## <a name="demo"></a> Demo
 
