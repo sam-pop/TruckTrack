@@ -25,13 +25,13 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
+    "express-handlebars": "^6.0.7",
     "express-session": "^1.15.6",
-    "mysql2": "^1.5.3",
-    "passport": "^0.4.0",
+    "mysql2": "^1.7.0",
+    "passport": "^0.6.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^4.38.0",
-    "sequelize-fixtures": "^0.7.0",
-    "validator": "^10.4.0"
+    "sequelize": "^6.29.0",
+    "sequelize-fixtures": "^1.2.0",
+    "validator": "^13.9.0"
   }
 }
